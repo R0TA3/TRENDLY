@@ -236,13 +236,13 @@ footer{background:var(--slate2);color:rgba(253,250,246,.42);padding:60px 5% 26px
       <input type="text" id="searchIn" placeholder="Search sarees, watches, shoes, bags..." oninput="doSearch(this.value)"/>
     </div>
     <div class="nav-links">
-      <button class="nl" onclick="quickFilter('women',this)">Women</button>
-      <button class="nl" onclick="quickFilter('men',this)">Men</button>
-      <button class="nl" onclick="quickFilter('ethnic',this)">Ethnic</button>
-      <button class="nl" onclick="quickFilter('footwear',this)">Footwear</button>
-      <button class="nl" onclick="quickFilter('watches',this)">Watches</button>
-      <button class="nl" onclick="quickFilter('bags',this)">Bags</button>
-      <button class="nl" onclick="quickFilter('jewellery',this)">Jewellery</button>
+      <button class="nl" data-cat="women" onclick="quickFilter('women')">Women</button>
+      <button class="nl" data-cat="men" onclick="quickFilter('men')">Men</button>
+      <button class="nl" data-cat="ethnic" onclick="quickFilter('ethnic')">Ethnic</button>
+      <button class="nl" data-cat="footwear" onclick="quickFilter('footwear')">Footwear</button>
+      <button class="nl" data-cat="watches" onclick="quickFilter('watches')">Watches</button>
+      <button class="nl" data-cat="bags" onclick="quickFilter('bags')">Bags</button>
+      <button class="nl" data-cat="jewellery" onclick="quickFilter('jewellery')">Jewellery</button>
     </div>
     <div class="nav-right">
       <button class="nav-icon" title="Wishlist">
@@ -253,17 +253,17 @@ footer{background:var(--slate2);color:rgba(253,250,246,.42);padding:60px 5% 26px
     </div>
   </div>
   <div class="cat-nav">
-    <button class="cna on" id="cna-all" onclick="quickFilter('all',this)">All</button>
-    <button class="cna" id="cna-women" onclick="quickFilter('women',this)">Women's Clothing</button>
-    <button class="cna" id="cna-men" onclick="quickFilter('men',this)">Men's Clothing</button>
-    <button class="cna" id="cna-ethnic" onclick="quickFilter('ethnic',this)">Ethnic Wear</button>
-    <button class="cna" id="cna-footwear" onclick="quickFilter('footwear',this)">Footwear</button>
-    <button class="cna" id="cna-watches" onclick="quickFilter('watches',this)">Watches</button>
-    <button class="cna" id="cna-bags" onclick="quickFilter('bags',this)">Bags</button>
-    <button class="cna" id="cna-jewellery" onclick="quickFilter('jewellery',this)">Jewellery</button>
-    <button class="cna" id="cna-sunglasses" onclick="quickFilter('sunglasses',this)">Sunglasses</button>
-    <button class="cna" id="cna-kids" onclick="quickFilter('kids',this)">Kids</button>
-    <button class="cna" id="cna-acc" onclick="quickFilter('acc',this)">Accessories</button>
+    <button class="cna on" data-cat="all" onclick="quickFilter('all')">All</button>
+    <button class="cna" data-cat="women" onclick="quickFilter('women')">Women's Clothing</button>
+    <button class="cna" data-cat="men" onclick="quickFilter('men')">Men's Clothing</button>
+    <button class="cna" data-cat="ethnic" onclick="quickFilter('ethnic')">Ethnic Wear</button>
+    <button class="cna" data-cat="footwear" onclick="quickFilter('footwear')">Footwear</button>
+    <button class="cna" data-cat="watches" onclick="quickFilter('watches')">Watches</button>
+    <button class="cna" data-cat="bags" onclick="quickFilter('bags')">Bags</button>
+    <button class="cna" data-cat="jewellery" onclick="quickFilter('jewellery')">Jewellery</button>
+    <button class="cna" data-cat="sunglasses" onclick="quickFilter('sunglasses')">Sunglasses</button>
+    <button class="cna" data-cat="kids" onclick="quickFilter('kids')">Kids</button>
+    <button class="cna" data-cat="acc" onclick="quickFilter('acc')">Accessories</button>
   </div>
 </nav>
 
@@ -324,16 +324,16 @@ footer{background:var(--slate2);color:rgba(253,250,246,.42);padding:60px 5% 26px
   </div>
   <div class="prod-bar">
     <div class="filters">
-      <button class="fp on" id="fp-all" onclick="quickFilter('all',this)">All</button>
-      <button class="fp" id="fp-women" onclick="quickFilter('women',this)">Women</button>
-      <button class="fp" id="fp-men" onclick="quickFilter('men',this)">Men</button>
-      <button class="fp" id="fp-ethnic" onclick="quickFilter('ethnic',this)">Ethnic</button>
-      <button class="fp" id="fp-footwear" onclick="quickFilter('footwear',this)">Footwear</button>
-      <button class="fp" id="fp-watches" onclick="quickFilter('watches',this)">Watches</button>
-      <button class="fp" id="fp-bags" onclick="quickFilter('bags',this)">Bags</button>
-      <button class="fp" id="fp-jewellery" onclick="quickFilter('jewellery',this)">Jewellery</button>
-      <button class="fp" id="fp-sunglasses" onclick="quickFilter('sunglasses',this)">Sunglasses</button>
-      <button class="fp" id="fp-kids" onclick="quickFilter('kids',this)">Kids</button>
+      <button class="fp on" data-cat="all" onclick="quickFilter('all')">All</button>
+      <button class="fp" data-cat="women" onclick="quickFilter('women')">Women</button>
+      <button class="fp" data-cat="men" onclick="quickFilter('men')">Men</button>
+      <button class="fp" data-cat="ethnic" onclick="quickFilter('ethnic')">Ethnic</button>
+      <button class="fp" data-cat="footwear" onclick="quickFilter('footwear')">Footwear</button>
+      <button class="fp" data-cat="watches" onclick="quickFilter('watches')">Watches</button>
+      <button class="fp" data-cat="bags" onclick="quickFilter('bags')">Bags</button>
+      <button class="fp" data-cat="jewellery" onclick="quickFilter('jewellery')">Jewellery</button>
+      <button class="fp" data-cat="sunglasses" onclick="quickFilter('sunglasses')">Sunglasses</button>
+      <button class="fp" data-cat="kids" onclick="quickFilter('kids')">Kids</button>
     </div>
     <div class="sort-grp">
       <label>Sort</label>
@@ -400,134 +400,125 @@ footer{background:var(--slate2);color:rgba(253,250,246,.42);padding:60px 5% 26px
 <div class="toast" id="toastEl"></div>
 
 <script>
-const TAG = 'pricetag03-21';
-const amzUrl = asin => 'https://www.amazon.in/dp/' + asin + '?tag=' + TAG;
+var TAG = 'pricetag03-21';
+function amzUrl(asin){ return 'https://www.amazon.in/dp/'+asin+'?tag='+TAG; }
 
-/* ══ ALL 30 PRODUCTS — sorted by price low to high ══ */
-/* Image fallback helper */
 var FB_URLS = {
-  women:'https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?w=400',
-  men:'https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?w=400',
-  ethnic:'https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=400',
-  footwear:'https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=400',
-  watches:'https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=400',
-  bags:'https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=400',
-  jewellery:'https://images.unsplash.com/photo-1573408301185-9519f94f36e9?w=400',
-  sunglasses:'https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=400',
-  kids:'https://images.unsplash.com/photo-1519278409-1f56ab241a93?w=400',
-  acc:'https://images.unsplash.com/photo-1601924994987-69e26d50dc26?w=400'
+  women:      'https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?w=400',
+  men:        'https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?w=400',
+  ethnic:     'https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=400',
+  footwear:   'https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=400',
+  watches:    'https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=400',
+  bags:       'https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=400',
+  jewellery:  'https://images.unsplash.com/photo-1573408301185-9519f94f36e9?w=400',
+  sunglasses: 'https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=400',
+  kids:       'https://images.unsplash.com/photo-1519278409-1f56ab241a93?w=400',
+  acc:        'https://images.unsplash.com/photo-1601924994987-69e26d50dc26?w=400'
 };
 function imgFail(el){ el.onerror=null; el.src = FB_URLS[el.dataset.cat] || FB_URLS.women; }
 
-const P = [
-  {id:1,  brand:"YouBella",       name:"YouBella Fashion Jewellery Combo Set for Women",           price:249,  mrp:699,  rating:3.9, reviews:23400, cat:"jewellery",  badge:"sale", asin:"B07L5JDMWT",  img:"https://images.weserv.nl/?url=m.media-amazon.com/images/I/71FqpPMxExL._AC_UL480_FMwebp_QL65_.jpg&w=400&output=webp"},
-  {id:2,  brand:"Jewels Galaxy",  name:"Jewels Galaxy AD Stone Necklace Jewellery Set",            price:299,  mrp:999,  rating:4.1, reviews:11200, cat:"jewellery",  badge:"new",  asin:"B081GHMS1N",  img:"https://images.weserv.nl/?url=m.media-amazon.com/images/I/61jfDKMDTIL._AC_UL480_FMwebp_QL65_.jpg&w=400&output=webp"},
-  {id:3,  brand:"VAST",           name:"VAST UV-Protected Wayfarer Unisex Sunglasses",             price:299,  mrp:699,  rating:4.0, reviews:14300, cat:"sunglasses", badge:"sale", asin:"B07P6X1PQD",  img:"https://images.weserv.nl/?url=m.media-amazon.com/images/I/71TpKpv9WvL._AC_UL480_FMwebp_QL65_.jpg&w=400&output=webp"},
-  {id:4,  brand:"Janasya",        name:"Janasya Women Printed Cotton Straight Kurti",              price:299,  mrp:799,  rating:4.1, reviews:6800,  cat:"women",      badge:"sale", asin:"B08LQJR4TV",  img:"https://images.weserv.nl/?url=m.media-amazon.com/images/I/61aCEiUxvdL._AC_UL480_FMwebp_QL65_.jpg&w=400&output=webp"},
-  {id:5,  brand:"Hopscotch",      name:"Hopscotch Girls Ethnic Printed Kurti Set",                 price:349,  mrp:999,  rating:4.3, reviews:3200,  cat:"kids",       badge:"new",  asin:"B09K7DXVPF",  img:"https://images.weserv.nl/?url=m.media-amazon.com/images/I/71GtAMMF2vL._AC_UL480_FMwebp_QL65_.jpg&w=400&output=webp"},
-  {id:6,  brand:"Jewels Galaxy",  name:"Jewels Galaxy Pearl Necklace and Earring Set",             price:349,  mrp:1099, rating:4.2, reviews:8700,  cat:"jewellery",  badge:"top",  asin:"B07XCRM3HP",  img:"https://images.weserv.nl/?url=m.media-amazon.com/images/I/617iRDqEiAL._AC_UL480_FMwebp_QL65_.jpg&w=400&output=webp"},
-  {id:7,  brand:"Libas",          name:"Libas Women Straight Ethnic Kurta Set",                    price:349,  mrp:999,  rating:4.2, reviews:8420,  cat:"women",      badge:"sale", asin:"B09VXY7B1K",  img:"https://images.weserv.nl/?url=m.media-amazon.com/images/I/615r-N3e2xL._AC_UL480_FMwebp_QL65_.jpg&w=400&output=webp"},
-  {id:8,  brand:"Accessorize",    name:"Accessorize London Women Printed Scarf",                   price:349,  mrp:799,  rating:4.1, reviews:4600,  cat:"acc",        badge:"new",  asin:"B08K3MGLWH",  img:"https://images.weserv.nl/?url=m.media-amazon.com/images/I/71iXjSHEaQL._AC_UL480_FMwebp_QL65_.jpg&w=400&output=webp"},
-  {id:9,  brand:"Carlton London", name:"Carlton London Women Body Spray Gift Set",                 price:399,  mrp:999,  rating:4.0, reviews:6800,  cat:"acc",        badge:"sale", asin:"B07XJCRVZP",  img:"https://images.weserv.nl/?url=m.media-amazon.com/images/I/71HYVxUAMRL._AC_UL480_FMwebp_QL65_.jpg&w=400&output=webp"},
-  {id:10, brand:"Symbol",         name:"Symbol Men Slim Fit Casual Shirt",                         price:399,  mrp:899,  rating:4.1, reviews:18600, cat:"men",        badge:"sale", asin:"B07QGVJ5N9",  img:"https://images.weserv.nl/?url=m.media-amazon.com/images/I/71ypRXnj1BL._AC_UL480_FMwebp_QL65_.jpg&w=400&output=webp"},
-  {id:11, brand:"Kashvi",         name:"Kashvi Creation Printed Cotton Saree with Blouse",         price:399,  mrp:999,  rating:4.0, reviews:2900,  cat:"ethnic",     badge:"new",  asin:"B09DXRT6W4",  img:"https://images.weserv.nl/?url=m.media-amazon.com/images/I/81GVYV2VBAL._AC_UL480_FMwebp_QL65_.jpg&w=400&output=webp"},
-  {id:12, brand:"Gini Jony",      name:"Gini Jony Boys Kurta Pyjama Set",                          price:449,  mrp:1299, rating:4.2, reviews:2400,  cat:"kids",       badge:"top",  asin:"B08LXFB9T5",  img:"https://images.weserv.nl/?url=m.media-amazon.com/images/I/61FrSoiAgmL._AC_UL480_FMwebp_QL65_.jpg&w=400&output=webp"},
-  {id:13, brand:"Fastrack",       name:"Fastrack UV400 Aviator Sunglasses for Men",                price:449,  mrp:1295, rating:4.2, reviews:8900,  cat:"sunglasses", badge:"top",  asin:"B00B1OKQHM",  img:"https://images.weserv.nl/?url=m.media-amazon.com/images/I/91jnFBaGUAL._AC_UL480_FMwebp_QL65_.jpg&w=400&output=webp"},
-  {id:14, brand:"BIBA",           name:"BIBA Women Embroidered Straight Kurta",                    price:449,  mrp:1199, rating:4.3, reviews:12300, cat:"women",      badge:"sale", asin:"B08N5L9KWD",  img:"https://images.weserv.nl/?url=m.media-amazon.com/images/I/71h4EJiTfXL._AC_UL480_FMwebp_QL65_.jpg&w=400&output=webp"},
-  {id:15, brand:"Bata",           name:"Bata Women Casual Ballet Flat Shoes",                      price:499,  mrp:999,  rating:4.1, reviews:14200, cat:"footwear",   badge:"sale", asin:"B00KSXF8RQ",  img:"https://images.weserv.nl/?url=m.media-amazon.com/images/I/71KIHFuNfUL._AC_UL480_FMwebp_QL65_.jpg&w=400&output=webp"},
-  {id:16, brand:"W",              name:"W for Woman Regular Ethnic Straight Kurta",                price:499,  mrp:1299, rating:4.4, reviews:9200,  cat:"women",      badge:"top",  asin:"B09CK7LWMQ",  img:"https://images.weserv.nl/?url=m.media-amazon.com/images/I/71TiKHDlLpL._AC_UL480_FMwebp_QL65_.jpg&w=400&output=webp"},
-  {id:17, brand:"Saree Mall",     name:"Saree Mall Cotton Silk Printed Saree with Blouse",         price:549,  mrp:1499, rating:4.2, reviews:4100,  cat:"ethnic",     badge:"sale", asin:"B08KJ9YB2Z",  img:"https://images.weserv.nl/?url=m.media-amazon.com/images/I/71JQMPoAy3L._AC_UL480_FMwebp_QL65_.jpg&w=400&output=webp"},
-  {id:18, brand:"Catwalk",        name:"Catwalk Women Block Heel Sandal Shoes",                    price:599,  mrp:1499, rating:4.0, reviews:5600,  cat:"footwear",   badge:"new",  asin:"B09CZXL5MQ",  img:"https://images.weserv.nl/?url=m.media-amazon.com/images/I/61fRJVYcakL._AC_UL480_FMwebp_QL65_.jpg&w=400&output=webp"},
-  {id:19, brand:"Lavie",          name:"Lavie Women Satchel Handbag",                              price:699,  mrp:1799, rating:4.0, reviews:7200,  cat:"bags",       badge:"sale", asin:"B08KFZQXHB",  img:"https://images.weserv.nl/?url=m.media-amazon.com/images/I/71jcByrdz-L._AC_UL480_FMwebp_QL65_.jpg&w=400&output=webp"},
-  {id:20, brand:"Fastrack",       name:"Fastrack Analog Womens Wrist Watch",                       price:749,  mrp:1795, rating:4.2, reviews:31200, cat:"watches",    badge:"sale", asin:"B00PWKDFX8",  img:"https://images.weserv.nl/?url=m.media-amazon.com/images/I/91PIKmE-SeL._AC_UL480_FMwebp_QL65_.jpg&w=400&output=webp"},
-  {id:21, brand:"Timex",          name:"Timex Analog Unisex Silver Dial Wrist Watch",              price:849,  mrp:2095, rating:4.3, reviews:9400,  cat:"watches",    badge:"top",  asin:"B00ISMD1LO",  img:"https://images.weserv.nl/?url=m.media-amazon.com/images/I/61aHiKJMArL._AC_UL480_FMwebp_QL65_.jpg&w=400&output=webp"},
-  {id:22, brand:"Caprese",        name:"Caprese Women Tote Shoulder Bag",                          price:999,  mrp:2499, rating:4.3, reviews:4100,  cat:"bags",       badge:"top",  asin:"B08N5DWRXT",  img:"https://images.weserv.nl/?url=m.media-amazon.com/images/I/61Pqb8VHBFL._AC_UL480_FMwebp_QL65_.jpg&w=400&output=webp"},
-  {id:23, brand:"Manyavar",       name:"Manyavar Men Kurta Churidar Set",                          price:999,  mrp:2499, rating:4.5, reviews:3200,  cat:"men",        badge:"top",  asin:"B08F2WXPL1",  img:"https://images.weserv.nl/?url=m.media-amazon.com/images/I/81j0V0C7CYL._AC_UL480_FMwebp_QL65_.jpg&w=400&output=webp"},
-  {id:24, brand:"Titan",          name:"Titan Analog Mens Wrist Watch",                            price:1295, mrp:2795, rating:4.4, reviews:18900, cat:"watches",    badge:"top",  asin:"B07BJMHB9G",  img:"https://images.weserv.nl/?url=m.media-amazon.com/images/I/61rPgsql3YL._AC_UL480_FMwebp_QL65_.jpg&w=400&output=webp"},
-  {id:25, brand:"Puma",           name:"Puma Men Softride Running Shoes",                          price:1299, mrp:2999, rating:4.3, reviews:22000, cat:"footwear",   badge:"top",  asin:"B07WDMQ4KP",  img:"https://images.weserv.nl/?url=m.media-amazon.com/images/I/71F1RvL8YKL._AC_UL480_FMwebp_QL65_.jpg&w=400&output=webp"},
-  {id:26, brand:"Saree Mall",     name:"Saree Mall Kanjivaram Silk Saree with Blouse Piece",       price:1499, mrp:3999, rating:4.4, reviews:2100,  cat:"ethnic",     badge:"top",  asin:"B09ML7VX3K",  img:"https://images.weserv.nl/?url=m.media-amazon.com/images/I/71HRFfCYZeL._AC_UL480_FMwebp_QL65_.jpg&w=400&output=webp"},
-  {id:27, brand:"Adidas",         name:"Adidas Men Running Sport Shoes",                           price:1699, mrp:3499, rating:4.4, reviews:34500, cat:"footwear",   badge:"top",  asin:"B09DYRX1WB",  img:"https://images.weserv.nl/?url=m.media-amazon.com/images/I/51NxpHOZtxL._AC_UL480_FMwebp_QL65_.jpg&w=400&output=webp"},
-  {id:28, brand:"Titan Raga",     name:"Titan Raga Womens Analog Watch",                           price:1895, mrp:4095, rating:4.5, reviews:12400, cat:"watches",    badge:"top",  asin:"B00CXSLBCC",  img:"https://images.weserv.nl/?url=m.media-amazon.com/images/I/81GnLjMxe4L._AC_UL480_FMwebp_QL65_.jpg&w=400&output=webp"},
-  {id:29, brand:"Hidesign",       name:"Hidesign Women Leather Shoulder Handbag",                  price:1999, mrp:3995, rating:4.4, reviews:3800,  cat:"bags",       badge:"top",  asin:"B07CR9HNDG",  img:"https://images.weserv.nl/?url=m.media-amazon.com/images/I/819Jrd-2LQL._AC_UL480_FMwebp_QL65_.jpg&w=400&output=webp"},
-  {id:30, brand:"Kalini",         name:"Kalini Women Designer Lehenga Choli Set",                  price:1999, mrp:5499, rating:4.2, reviews:1900,  cat:"women",      badge:"sale", asin:"B09KXJDYQB",  img:"https://images.weserv.nl/?url=m.media-amazon.com/images/I/71VrxFk35GL._AC_UL480_FMwebp_QL65_.jpg&w=400&output=webp"}
+var P = [
+  {id:1,  brand:"YouBella",       name:"YouBella Fashion Jewellery Combo Set",              price:249,  mrp:699,  rating:3.9, reviews:23400, cat:"jewellery",  badge:"sale", asin:"B07L5JDMWT",  img:"https://images.weserv.nl/?url=m.media-amazon.com/images/I/71FqpPMxExL._AC_UL480_FMwebp_QL65_.jpg&w=400"},
+  {id:2,  brand:"Jewels Galaxy",  name:"Jewels Galaxy Stone Necklace Set",                  price:299,  mrp:999,  rating:4.1, reviews:11200, cat:"jewellery",  badge:"new",  asin:"B081GHMS1N",  img:"https://images.weserv.nl/?url=m.media-amazon.com/images/I/61jfDKMDTIL._AC_UL480_FMwebp_QL65_.jpg&w=400"},
+  {id:3,  brand:"VAST",           name:"VAST UV-Protected Wayfarer Sunglasses",             price:299,  mrp:699,  rating:4.0, reviews:14300, cat:"sunglasses", badge:"sale", asin:"B07P6X1PQD",  img:"https://images.weserv.nl/?url=m.media-amazon.com/images/I/71TpKpv9WvL._AC_UL480_FMwebp_QL65_.jpg&w=400"},
+  {id:4,  brand:"Janasya",        name:"Janasya Women Printed Cotton Kurti",                price:299,  mrp:799,  rating:4.1, reviews:6800,  cat:"women",      badge:"sale", asin:"B08LQJR4TV",  img:"https://images.weserv.nl/?url=m.media-amazon.com/images/I/61aCEiUxvdL._AC_UL480_FMwebp_QL65_.jpg&w=400"},
+  {id:5,  brand:"Hopscotch",      name:"Hopscotch Girls Ethnic Kurti Set",                  price:349,  mrp:999,  rating:4.3, reviews:3200,  cat:"kids",       badge:"new",  asin:"B09K7DXVPF",  img:"https://images.weserv.nl/?url=m.media-amazon.com/images/I/71GtAMMF2vL._AC_UL480_FMwebp_QL65_.jpg&w=400"},
+  {id:6,  brand:"Jewels Galaxy",  name:"Jewels Galaxy Pearl Necklace Earring Set",          price:349,  mrp:1099, rating:4.2, reviews:8700,  cat:"jewellery",  badge:"top",  asin:"B07XCRM3HP",  img:"https://images.weserv.nl/?url=m.media-amazon.com/images/I/617iRDqEiAL._AC_UL480_FMwebp_QL65_.jpg&w=400"},
+  {id:7,  brand:"Libas",          name:"Libas Women Straight Ethnic Kurta Set",             price:349,  mrp:999,  rating:4.2, reviews:8420,  cat:"women",      badge:"sale", asin:"B09VXY7B1K",  img:"https://images.weserv.nl/?url=m.media-amazon.com/images/I/615r-N3e2xL._AC_UL480_FMwebp_QL65_.jpg&w=400"},
+  {id:8,  brand:"Accessorize",    name:"Accessorize London Printed Scarf",                  price:349,  mrp:799,  rating:4.1, reviews:4600,  cat:"acc",        badge:"new",  asin:"B08K3MGLWH",  img:"https://images.weserv.nl/?url=m.media-amazon.com/images/I/71iXjSHEaQL._AC_UL480_FMwebp_QL65_.jpg&w=400"},
+  {id:9,  brand:"Carlton London", name:"Carlton London Body Spray Gift Set",                price:399,  mrp:999,  rating:4.0, reviews:6800,  cat:"acc",        badge:"sale", asin:"B07XJCRVZP",  img:"https://images.weserv.nl/?url=m.media-amazon.com/images/I/71HYVxUAMRL._AC_UL480_FMwebp_QL65_.jpg&w=400"},
+  {id:10, brand:"Symbol",         name:"Symbol Men Slim Fit Casual Shirt",                  price:399,  mrp:899,  rating:4.1, reviews:18600, cat:"men",        badge:"sale", asin:"B07QGVJ5N9",  img:"https://images.weserv.nl/?url=m.media-amazon.com/images/I/71ypRXnj1BL._AC_UL480_FMwebp_QL65_.jpg&w=400"},
+  {id:11, brand:"Kashvi",         name:"Kashvi Creation Cotton Saree with Blouse",          price:399,  mrp:999,  rating:4.0, reviews:2900,  cat:"ethnic",     badge:"new",  asin:"B09DXRT6W4",  img:"https://images.weserv.nl/?url=m.media-amazon.com/images/I/81GVYV2VBAL._AC_UL480_FMwebp_QL65_.jpg&w=400"},
+  {id:12, brand:"Gini Jony",      name:"Gini Jony Boys Kurta Pyjama Set",                   price:449,  mrp:1299, rating:4.2, reviews:2400,  cat:"kids",       badge:"top",  asin:"B08LXFB9T5",  img:"https://images.weserv.nl/?url=m.media-amazon.com/images/I/61FrSoiAgmL._AC_UL480_FMwebp_QL65_.jpg&w=400"},
+  {id:13, brand:"Fastrack",       name:"Fastrack UV400 Aviator Sunglasses",                 price:449,  mrp:1295, rating:4.2, reviews:8900,  cat:"sunglasses", badge:"top",  asin:"B00B1OKQHM",  img:"https://images.weserv.nl/?url=m.media-amazon.com/images/I/91jnFBaGUAL._AC_UL480_FMwebp_QL65_.jpg&w=400"},
+  {id:14, brand:"BIBA",           name:"BIBA Women Embroidered Straight Kurta",             price:449,  mrp:1199, rating:4.3, reviews:12300, cat:"women",      badge:"sale", asin:"B08N5L9KWD",  img:"https://images.weserv.nl/?url=m.media-amazon.com/images/I/71h4EJiTfXL._AC_UL480_FMwebp_QL65_.jpg&w=400"},
+  {id:15, brand:"Bata",           name:"Bata Women Casual Ballet Flat Shoes",               price:499,  mrp:999,  rating:4.1, reviews:14200, cat:"footwear",   badge:"sale", asin:"B00KSXF8RQ",  img:"https://images.weserv.nl/?url=m.media-amazon.com/images/I/71KIHFuNfUL._AC_UL480_FMwebp_QL65_.jpg&w=400"},
+  {id:16, brand:"W",              name:"W for Woman Regular Ethnic Straight Kurta",         price:499,  mrp:1299, rating:4.4, reviews:9200,  cat:"women",      badge:"top",  asin:"B09CK7LWMQ",  img:"https://images.weserv.nl/?url=m.media-amazon.com/images/I/71TiKHDlLpL._AC_UL480_FMwebp_QL65_.jpg&w=400"},
+  {id:17, brand:"Saree Mall",     name:"Saree Mall Cotton Silk Printed Saree",              price:549,  mrp:1499, rating:4.2, reviews:4100,  cat:"ethnic",     badge:"sale", asin:"B08KJ9YB2Z",  img:"https://images.weserv.nl/?url=m.media-amazon.com/images/I/71JQMPoAy3L._AC_UL480_FMwebp_QL65_.jpg&w=400"},
+  {id:18, brand:"Catwalk",        name:"Catwalk Women Block Heel Sandal Shoes",             price:599,  mrp:1499, rating:4.0, reviews:5600,  cat:"footwear",   badge:"new",  asin:"B09CZXL5MQ",  img:"https://images.weserv.nl/?url=m.media-amazon.com/images/I/61fRJVYcakL._AC_UL480_FMwebp_QL65_.jpg&w=400"},
+  {id:19, brand:"Lavie",          name:"Lavie Women Satchel Handbag",                       price:699,  mrp:1799, rating:4.0, reviews:7200,  cat:"bags",       badge:"sale", asin:"B08KFZQXHB",  img:"https://images.weserv.nl/?url=m.media-amazon.com/images/I/71jcByrdz-L._AC_UL480_FMwebp_QL65_.jpg&w=400"},
+  {id:20, brand:"Fastrack",       name:"Fastrack Analog Womens Wrist Watch",                price:749,  mrp:1795, rating:4.2, reviews:31200, cat:"watches",    badge:"sale", asin:"B00PWKDFX8",  img:"https://images.weserv.nl/?url=m.media-amazon.com/images/I/91PIKmE-SeL._AC_UL480_FMwebp_QL65_.jpg&w=400"},
+  {id:21, brand:"Timex",          name:"Timex Analog Unisex Silver Dial Watch",             price:849,  mrp:2095, rating:4.3, reviews:9400,  cat:"watches",    badge:"top",  asin:"B00ISMD1LO",  img:"https://images.weserv.nl/?url=m.media-amazon.com/images/I/61aHiKJMArL._AC_UL480_FMwebp_QL65_.jpg&w=400"},
+  {id:22, brand:"Caprese",        name:"Caprese Women Tote Shoulder Bag",                   price:999,  mrp:2499, rating:4.3, reviews:4100,  cat:"bags",       badge:"top",  asin:"B08N5DWRXT",  img:"https://images.weserv.nl/?url=m.media-amazon.com/images/I/61Pqb8VHBFL._AC_UL480_FMwebp_QL65_.jpg&w=400"},
+  {id:23, brand:"Manyavar",       name:"Manyavar Men Kurta Churidar Set",                   price:999,  mrp:2499, rating:4.5, reviews:3200,  cat:"men",        badge:"top",  asin:"B08F2WXPL1",  img:"https://images.weserv.nl/?url=m.media-amazon.com/images/I/81j0V0C7CYL._AC_UL480_FMwebp_QL65_.jpg&w=400"},
+  {id:24, brand:"Titan",          name:"Titan Analog Mens Wrist Watch",                     price:1295, mrp:2795, rating:4.4, reviews:18900, cat:"watches",    badge:"top",  asin:"B07BJMHB9G",  img:"https://images.weserv.nl/?url=m.media-amazon.com/images/I/61rPgsql3YL._AC_UL480_FMwebp_QL65_.jpg&w=400"},
+  {id:25, brand:"Puma",           name:"Puma Men Softride Running Shoes",                   price:1299, mrp:2999, rating:4.3, reviews:22000, cat:"footwear",   badge:"top",  asin:"B07WDMQ4KP",  img:"https://images.weserv.nl/?url=m.media-amazon.com/images/I/71F1RvL8YKL._AC_UL480_FMwebp_QL65_.jpg&w=400"},
+  {id:26, brand:"Saree Mall",     name:"Saree Mall Kanjivaram Silk Saree",                  price:1499, mrp:3999, rating:4.4, reviews:2100,  cat:"ethnic",     badge:"top",  asin:"B09ML7VX3K",  img:"https://images.weserv.nl/?url=m.media-amazon.com/images/I/71HRFfCYZeL._AC_UL480_FMwebp_QL65_.jpg&w=400"},
+  {id:27, brand:"Adidas",         name:"Adidas Men Running Sport Shoes",                    price:1699, mrp:3499, rating:4.4, reviews:34500, cat:"footwear",   badge:"top",  asin:"B09DYRX1WB",  img:"https://images.weserv.nl/?url=m.media-amazon.com/images/I/51NxpHOZtxL._AC_UL480_FMwebp_QL65_.jpg&w=400"},
+  {id:28, brand:"Titan Raga",     name:"Titan Raga Womens Analog Watch",                    price:1895, mrp:4095, rating:4.5, reviews:12400, cat:"watches",    badge:"top",  asin:"B00CXSLBCC",  img:"https://images.weserv.nl/?url=m.media-amazon.com/images/I/81GnLjMxe4L._AC_UL480_FMwebp_QL65_.jpg&w=400"},
+  {id:29, brand:"Hidesign",       name:"Hidesign Women Leather Shoulder Handbag",           price:1999, mrp:3995, rating:4.4, reviews:3800,  cat:"bags",       badge:"top",  asin:"B07CR9HNDG",  img:"https://images.weserv.nl/?url=m.media-amazon.com/images/I/819Jrd-2LQL._AC_UL480_FMwebp_QL65_.jpg&w=400"},
+  {id:30, brand:"Kalini",         name:"Kalini Women Designer Lehenga Choli Set",           price:1999, mrp:5499, rating:4.2, reviews:1900,  cat:"women",      badge:"sale", asin:"B09KXJDYQB",  img:"https://images.weserv.nl/?url=m.media-amazon.com/images/I/71VrxFk35GL._AC_UL480_FMwebp_QL65_.jpg&w=400"}
 ];
 
-/* Category fallback images (Unsplash - always works) */
-const FB = {
-  women:'https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?w=400&q=80',
-  men:'https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?w=400&q=80',
-  ethnic:'https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=400&q=80',
-  footwear:'https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=400&q=80',
-  watches:'https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=400&q=80',
-  bags:'https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=400&q=80',
-  jewellery:'https://images.unsplash.com/photo-1573408301185-9519f94f36e9?w=400&q=80',
-  sunglasses:'https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=400&q=80',
-  kids:'https://images.unsplash.com/photo-1519278409-1f56ab241a93?w=400&q=80',
-  acc:'https://images.unsplash.com/photo-1601924994987-69e26d50dc26?w=400&q=80',
-};
-
-const CATS = [
-  {name:'Women',    cnt:'18,400+', cat:'women',      asin:'B09VXY7B1K'},
-  {name:'Men',      cnt:'6,800+',  cat:'men',        asin:'B07QGVJ5N9'},
-  {name:'Ethnic',   cnt:'14,200+', cat:'ethnic',     asin:'B09ML7VX3K'},
-  {name:'Footwear', cnt:'8,900+',  cat:'footwear',   asin:'B00KSXF8RQ'},
-  {name:'Watches',  cnt:'3,400+',  cat:'watches',    asin:'B00PWKDFX8'},
-  {name:'Bags',     cnt:'5,600+',  cat:'bags',       asin:'B08KFZQXHB'},
-  {name:'Jewellery',cnt:'11,200+', cat:'jewellery',  asin:'B07L5JDMWT'},
-  {name:'Sunglasses',cnt:'2,100+', cat:'sunglasses', asin:'B07P6X1PQD'},
+var CATS = [
+  {name:"Women",     cnt:"18,400+", cat:"women",      asin:"B09VXY7B1K"},
+  {name:"Men",       cnt:"6,800+",  cat:"men",        asin:"B07QGVJ5N9"},
+  {name:"Ethnic",    cnt:"14,200+", cat:"ethnic",     asin:"B09ML7VX3K"},
+  {name:"Footwear",  cnt:"8,900+",  cat:"footwear",   asin:"B00KSXF8RQ"},
+  {name:"Watches",   cnt:"3,400+",  cat:"watches",    asin:"B00PWKDFX8"},
+  {name:"Bags",      cnt:"5,600+",  cat:"bags",       asin:"B08KFZQXHB"},
+  {name:"Jewellery", cnt:"11,200+", cat:"jewellery",  asin:"B07L5JDMWT"},
+  {name:"Sunglasses",cnt:"2,100+",  cat:"sunglasses", asin:"B07P6X1PQD"}
 ];
 
-let activeCat = 'all', wishSet = new Set(), searchQ = '';
+var activeCat = "all";
+var wishSet   = {};
+var searchQ   = "";
 
-/* Amazon Associates official image API — designed for affiliate sites */
-// amzImg not used — images are per-product in P array
-const amzImg = (asin, size) =>
-  'https://ws-in.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=' + asin +
-  '&Format=SL' + (size||300) + '&ID=AsinImage&MarketPlace=IN&ServiceVersion=20070822&WS=1';
-
-function stars(r) {
-  let s = '';
-  for (let i = 1; i <= 5; i++) {
-    const c = i <= Math.floor(r) ? '#C4881A' : '#DDD8D0';
-    s += '<svg width="11" height="11" viewBox="0 0 24 24" fill="'+c+'"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>';
+function starsHtml(r) {
+  var h = "";
+  for (var i = 1; i <= 5; i++) {
+    var c = (i <= Math.floor(r)) ? "#C4881A" : "#DDD8D0";
+    h += '<svg width="11" height="11" viewBox="0 0 24 24" fill="'+c+'"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>';
   }
-  return '<div class="stars">'+s+'</div>';
+  return h;
 }
 
-function badgeClass(b) { return {sale:'pb-sale',new:'pb-new',top:'pb-top'}[b]||'pb-new'; }
-function badgeLabel(b) { return {sale:'Sale',new:'New',top:'Top Rated'}[b]||b; }
-
-/* BUILD CATEGORY CARDS */
 function buildCats() {
-  document.getElementById('catGrid').innerHTML = CATS.map(c =>
-    '<div class="ccard" onclick="quickFilter(\''+c.cat+'\',null);document.getElementById(\'products\').scrollIntoView({behavior:\'smooth\'})">' +
-    '<div class="ccard-img-wrap">' +
-    '<img src="' + amzImg(c.asin,100) + '" alt="' + c.name + '" loading="lazy" data-cat="' + c.cat + '" onerror="imgFail(this)"/>' +
-    '</div>' +
-    '<div class="ccard-name">'+c.name+'</div>' +
-    '<div class="ccard-cnt">'+c.cnt+'</div>' +
-    '</div>'
-  ).join('');
+  var grid = document.getElementById("catGrid");
+  if (!grid) return;
+  var h = "";
+  for (var i = 0; i < CATS.length; i++) {
+    var c = CATS[i];
+    var fb = FB_URLS[c.cat] || FB_URLS.women;
+    h += '<div class="ccard" data-cat="' + c.cat + '">';
+    h += '<div class="ccard-img-wrap">';
+    h += '<img src="' + fb + '" alt="' + c.name + '" loading="lazy" data-cat="' + c.cat + '" onerror="imgFail(this)"/>';
+    h += '</div>';
+    h += '<div class="ccard-name">' + c.name + '</div>';
+    h += '<div class="ccard-cnt">' + c.cnt + '</div>';
+    h += '</div>';
+  }
+  grid.innerHTML = h;
 }
 
-/* MAIN RENDER — called on every filter/sort change */
 function renderProds() {
-  var list = activeCat === 'all' ? P.slice() : P.filter(function(p){ return p.cat === activeCat; });
-  if (searchQ) list = list.filter(function(p){
-    return p.name.toLowerCase().indexOf(searchQ) !== -1 ||
-           p.brand.toLowerCase().indexOf(searchQ) !== -1 ||
-           p.cat.indexOf(searchQ) !== -1;
-  });
+  var list = [];
+  for (var i = 0; i < P.length; i++) {
+    if (activeCat === "all" || P[i].cat === activeCat) {
+      list.push(P[i]);
+    }
+  }
+  if (searchQ) {
+    var q = searchQ;
+    list = list.filter(function(p) {
+      return p.name.toLowerCase().indexOf(q) !== -1 ||
+             p.brand.toLowerCase().indexOf(q) !== -1 ||
+             p.cat.indexOf(q) !== -1;
+    });
+  }
 
-  var sortEl = document.getElementById('sortSel');
-  var s = sortEl ? sortEl.value : 'price-asc';
-  if (s === 'price-asc')  list.sort(function(a,b){ return a.price - b.price; });
-  if (s === 'price-desc') list.sort(function(a,b){ return b.price - a.price; });
-  if (s === 'discount')   list.sort(function(a,b){ return (b.mrp-b.price)/b.mrp - (a.mrp-a.price)/a.mrp; });
-  if (s === 'rating')     list.sort(function(a,b){ return b.rating - a.rating; });
+  var sel = document.getElementById("sortSel");
+  var s   = sel ? sel.value : "price-asc";
+  if (s === "price-asc")  list.sort(function(a,b){ return a.price - b.price; });
+  if (s === "price-desc") list.sort(function(a,b){ return b.price - a.price; });
+  if (s === "discount")   list.sort(function(a,b){ return (b.mrp-b.price)/b.mrp - (a.mrp-a.price)/a.mrp; });
+  if (s === "rating")     list.sort(function(a,b){ return b.rating - a.rating; });
 
-  document.getElementById('prodCount').textContent = list.length;
-  var grid = document.getElementById('prodGrid');
+  var countEl = document.getElementById("prodCount");
+  if (countEl) countEl.textContent = list.length;
+
+  var grid = document.getElementById("prodGrid");
   if (!grid) return;
 
   if (list.length === 0) {
@@ -535,54 +526,64 @@ function renderProds() {
     return;
   }
 
-  var html = '';
+  var BADGE_CLS = {sale:"pb-sale", new:"pb-new", top:"pb-top"};
+  var BADGE_LBL = {sale:"Sale",    new:"New",    top:"Top Rated"};
+
+  var h = "";
   for (var i = 0; i < list.length; i++) {
-    var p = list[i];
+    var p    = list[i];
     var link = amzUrl(p.asin);
     var off  = Math.round((1 - p.price / p.mrp) * 100);
-    var badgeCls = {sale:'pb-sale', new:'pb-new', top:'pb-top'}[p.badge] || 'pb-new';
-    var badgeLbl = {sale:'Sale', new:'New', top:'Top Rated'}[p.badge] || p.badge;
-    var starHtml = '';
-    for (var s2 = 1; s2 <= 5; s2++) {
-      var fc = s2 <= Math.floor(p.rating) ? '#C4881A' : '#DDD8D0';
-      starHtml += '<svg width="11" height="11" viewBox="0 0 24 24" fill="' + fc + '"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>';
-    }
-    var offBadge = off > 0 ? '<span class="poff">' + off + '% off</span>' : '';
+    var bcls = BADGE_CLS[p.badge] || "pb-new";
+    var blbl = BADGE_LBL[p.badge] || p.badge;
+    var wOn  = wishSet[p.id] ? " on" : "";
+    var wFill= wishSet[p.id] ? "var(--burg)" : "none";
+    var wStr = wishSet[p.id] ? "var(--burg)" : "var(--stone)";
 
-    html += '<div class="pcard" onclick="window.open('' + link + '','_blank')">';
-    html += '<div class="pcard-img">';
-    html += '<img src="' + p.img + '" alt="' + p.brand + '" loading="lazy" data-cat="' + p.cat + '" onerror="imgFail(this)"/>';
-    html += '<div class="pbadges"><span class="pbadge ' + badgeCls + '">' + badgeLbl + '</span></div>';
-    html += '</div>';
-    html += '<div class="pbody">';
-    html += '<div class="pbrand">' + p.brand + '</div>';
-    html += '<div class="pname">' + p.name + '</div>';
-    html += '<div class="prating"><div class="stars">' + starHtml + '</div><span class="prating-n">' + p.rating + ' (' + p.reviews.toLocaleString() + ')</span></div>';
-    html += '<div class="ppricing"><span class="pprice">₹' + p.price.toLocaleString() + '</span><span class="pmrp">₹' + p.mrp.toLocaleString() + '</span>' + offBadge + '</div>';
-    html += '<div class="pactions"><button class="btn-amazon" onclick="event.stopPropagation();window.open('' + link + '','_blank')"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>Buy on Amazon</button></div>';
-    html += '</div>';
-    html += '<div class="paff"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg> Opens Amazon India</div>';
-    html += '</div>';
+    h += '<div class="pcard" data-asin="' + p.asin + '">'; 
+    h +=   '<div class="pcard-img">';
+    h +=     '<img src="' + p.img + '" alt="' + p.brand + '" loading="lazy" data-cat="' + p.cat + '" onerror="imgFail(this)"/>';
+    h +=     '<div class="pbadges"><span class="pbadge ' + bcls + '">' + blbl + '</span></div>';
+    h +=     '<button class="pwish' + wOn + '" data-id="' + p.id + '">';
+    h +=       '<svg width="13" height="13" viewBox="0 0 24 24" fill="' + wFill + '" stroke="' + wStr + '" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>';
+    h +=     '</button>';
+    h +=   '</div>';
+    h +=   '<div class="pbody">';
+    h +=     '<div class="pbrand">' + p.brand + '</div>';
+    h +=     '<div class="pname">'  + p.name  + '</div>';
+    h +=     '<div class="prating"><div class="stars">' + starsHtml(p.rating) + '</div><span class="prating-n">' + p.rating + ' (' + p.reviews.toLocaleString() + ')</span></div>';
+    h +=     '<div class="ppricing">';
+    h +=       '<span class="pprice">₹' + p.price.toLocaleString() + '</span>';
+    h +=       '<span class="pmrp">₹'   + p.mrp.toLocaleString()   + '</span>';
+    if (off > 0) h += '<span class="poff">' + off + '% off</span>';
+    h +=     '</div>';
+    h +=     '<div class="pactions">';
+        h +=       '<button class="btn-amazon" data-asin="' + p.asin + '">'; 
+    h +=         '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>';
+    h +=         'Buy on Amazon';
+    h +=       '</button>';
+    h +=     '</div>';
+    h +=   '</div>';
+    h +=   '<div class="paff"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg> Opens Amazon India</div>';
+    h += '</div>';
   }
-  grid.innerHTML = html;
+  grid.innerHTML = h;
 }
 
-/* FILTER */
-function quickFilter(cat, el) {
+function goAmazon(asin) {
+  window.open(amzUrl(asin), "_blank");
+}
+
+function quickFilter(cat) {
   activeCat = cat;
-  /* pill buttons */
-  document.querySelectorAll('.fp').forEach(function(f){f.classList.remove('on');});
-  var fpEl = document.getElementById('fp-'+cat);
-  if (fpEl) fpEl.classList.add('on');
-  /* cat nav */
-  document.querySelectorAll('.cna').forEach(function(a){a.classList.remove('on');});
-  var cnaEl = document.getElementById('cna-'+cat);
-  if (cnaEl) cnaEl.classList.add('on');
+  document.querySelectorAll(".fp").forEach(function(el){
+    el.classList.toggle("on", el.dataset.cat === cat || (cat === "all" && el.dataset.cat === "all"));
+  });
+  document.querySelectorAll(".cna").forEach(function(el){
+    el.classList.toggle("on", el.dataset.cat === cat || (cat === "all" && el.dataset.cat === "all"));
+  });
   renderProds();
-  if (el && el.closest) {
-    var sec = document.getElementById('products');
-    if (sec) sec.scrollIntoView({behavior:'smooth'});
-  }
+  document.getElementById("products").scrollIntoView({behavior:"smooth"});
 }
 
 function doSearch(v) {
@@ -591,37 +592,78 @@ function doSearch(v) {
 }
 
 function toggleWish(id, btn) {
-  if (wishSet.has(id)) {
-    wishSet.delete(id);
-    btn.classList.remove('on');
-    btn.querySelector('svg').setAttribute('fill','none');
-    btn.querySelector('svg').setAttribute('stroke','var(--stone)');
-    showToast('Removed from wishlist');
+  if (wishSet[id]) {
+    delete wishSet[id];
+    btn.classList.remove("on");
   } else {
-    wishSet.add(id);
-    btn.classList.add('on');
-    btn.querySelector('svg').setAttribute('fill','var(--burg)');
-    btn.querySelector('svg').setAttribute('stroke','var(--burg)');
-    showToast('Saved to wishlist');
+    wishSet[id] = true;
+    btn.classList.add("on");
   }
-  document.getElementById('wishCount').textContent = wishSet.size;
+  var total = Object.keys(wishSet).length;
+  var wc = document.getElementById("wishCount");
+  if (wc) wc.textContent = total;
+  showToast(wishSet[id] ? "Saved to wishlist" : "Removed from wishlist");
 }
 
-window.addEventListener('scroll', function(){
-  document.getElementById('nav').classList.toggle('sh', window.scrollY > 28);
+window.addEventListener("scroll", function(){
+  document.getElementById("nav").classList.toggle("sh", window.scrollY > 28);
 });
 
 var tTimer;
 function showToast(msg) {
-  var el = document.getElementById('toastEl');
-  el.textContent = msg; el.classList.add('show');
+  var el = document.getElementById("toastEl");
+  if (!el) return;
+  el.textContent = msg;
+  el.classList.add("show");
   clearTimeout(tTimer);
-  tTimer = setTimeout(function(){ el.classList.remove('show'); }, 3000);
+  tTimer = setTimeout(function(){ el.classList.remove("show"); }, 3000);
 }
 
-/* INIT */
 buildCats();
 renderProds();
+
+/* Event delegation - handles clicks on dynamically built cards */
+document.addEventListener("click", function(e) {
+  /* Category card */
+  var ccard = e.target.closest(".ccard");
+  if (ccard && ccard.dataset.cat) {
+    quickFilter(ccard.dataset.cat);
+    return;
+  }
+  /* Product card - open Amazon */
+  var pcard = e.target.closest(".pcard");
+  if (pcard && pcard.dataset.asin) {
+    /* Don't open if wishlist button was clicked */
+    if (!e.target.closest(".pwish")) {
+      goAmazon(pcard.dataset.asin);
+    }
+    return;
+  }
+  /* Buy button */
+  var buyBtn = e.target.closest(".btn-amazon");
+  if (buyBtn && buyBtn.dataset.asin) {
+    e.stopPropagation();
+    goAmazon(buyBtn.dataset.asin);
+    return;
+  }
+  /* Wishlist button */
+  var wishBtn = e.target.closest(".pwish");
+  if (wishBtn && wishBtn.dataset.id) {
+    e.stopPropagation();
+    var id = parseInt(wishBtn.dataset.id);
+    if (wishSet[id]) {
+      delete wishSet[id];
+      wishBtn.classList.remove("on");
+      showToast("Removed from wishlist");
+    } else {
+      wishSet[id] = true;
+      wishBtn.classList.add("on");
+      showToast("Saved to wishlist");
+    }
+    var wc = document.getElementById("wishCount");
+    if (wc) wc.textContent = Object.keys(wishSet).length;
+  }
+});
 </script>
 </body>
 </html>
