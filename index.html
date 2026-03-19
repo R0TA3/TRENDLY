@@ -1,0 +1,1315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Trendly — India's Fashion Destination</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Jost:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --burg:#7B2448;
+  --burg2:#621B39;
+  --burg3:#3D0F22;
+  --burg-light:#F8EEF3;
+  --burg-mid:rgba(123,36,72,0.12);
+  --rose:#C47A92;
+  --champ:#F0E0C4;
+  --champ2:#E0CAA8;
+  --slate:#252C38;
+  --slate2:#1A2030;
+  --ivory:#FDFAF6;
+  --ivory2:#F5F0E8;
+  --ivory3:#EBE4D8;
+  --stone:#8A8078;
+  --stone2:#B0A89C;
+  --ink:#18140F;
+  --border:rgba(24,20,15,0.08);
+  --border2:rgba(24,20,15,0.14);
+  --white:#FFFFFF;
+  --f-serif:'Playfair Display',Georgia,serif;
+  --f-sans:'Jost',sans-serif;
+  --shadow-sm:0 1px 4px rgba(24,20,15,0.06);
+  --shadow-md:0 4px 20px rgba(24,20,15,0.1);
+  --shadow-lg:0 12px 48px rgba(24,20,15,0.14);
+  --r:8px;--r2:14px;--r3:20px;--r4:28px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--f-sans);background:var(--ivory);color:var(--ink);overflow-x:hidden;line-height:1.5}
+::-webkit-scrollbar{width:4px}
+::-webkit-scrollbar-track{background:var(--ivory2)}
+::-webkit-scrollbar-thumb{background:var(--ivory3);border-radius:2px}
+a{text-decoration:none;color:inherit}
+button{cursor:pointer;font-family:var(--f-sans);border:none}
+img{display:block;max-width:100%}
+
+/* ── ANN BAR ── */
+.ann{
+  background:var(--slate2);color:rgba(240,224,196,.7);
+  text-align:center;padding:9px 20px;font-size:12px;font-weight:400;letter-spacing:.04em;
+}
+.ann strong{color:var(--champ);font-weight:600}
+
+/* ── NAV ── */
+#nav{
+  position:sticky;top:0;z-index:500;
+  background:rgba(253,250,246,.97);backdrop-filter:blur(20px);
+  border-bottom:1px solid var(--border);transition:box-shadow .3s;
+}
+#nav.sh{box-shadow:var(--shadow-md)}
+.nav-top{
+  display:flex;align-items:center;gap:14px;
+  padding:0 5%;height:60px;
+}
+.logo{
+  font-family:var(--f-serif);font-size:22px;font-weight:700;
+  color:var(--burg);flex-shrink:0;letter-spacing:-.2px;
+}
+.logo span{font-size:10px;font-weight:400;color:var(--stone);font-family:var(--f-sans);letter-spacing:.1em;text-transform:uppercase;margin-left:5px}
+.nav-search{
+  flex:1;max-width:480px;display:flex;align-items:center;gap:9px;
+  background:var(--ivory2);border:1.5px solid var(--border2);
+  border-radius:100px;padding:8px 16px;transition:all .2s;
+}
+.nav-search:focus-within{border-color:var(--burg);background:var(--white);box-shadow:0 0 0 3px var(--burg-mid)}
+.nav-search svg{flex-shrink:0;color:var(--stone2)}
+.nav-search input{flex:1;border:none;background:none;font-family:var(--f-sans);font-size:13.5px;color:var(--ink);outline:none}
+.nav-search input::placeholder{color:var(--stone2)}
+.nav-links{display:flex;gap:2px;margin-left:8px}
+.nl{padding:6px 12px;border-radius:6px;font-size:13px;font-weight:500;color:var(--stone);background:none;transition:all .2s;white-space:nowrap}
+.nl:hover{color:var(--burg);background:var(--burg-light)}
+.nl.on{color:var(--burg);font-weight:600}
+.nav-right{display:flex;align-items:center;gap:8px;margin-left:auto;flex-shrink:0}
+.nav-icon{
+  width:36px;height:36px;border-radius:var(--r);background:none;
+  display:flex;align-items:center;justify-content:center;transition:background .2s;position:relative;
+}
+.nav-icon:hover{background:var(--ivory2)}
+.nav-icon svg{color:var(--stone);transition:color .2s}
+.nav-icon:hover svg{color:var(--burg)}
+.nbadge{
+  position:absolute;top:3px;right:3px;width:14px;height:14px;
+  border-radius:50%;background:var(--burg);color:white;
+  font-size:8px;font-weight:700;display:flex;align-items:center;justify-content:center;
+}
+.btn-signin{
+  padding:8px 18px;border-radius:100px;border:1.5px solid var(--border2);
+  background:none;font-size:13px;font-weight:600;color:var(--ink);transition:all .2s;
+}
+.btn-signin:hover{border-color:var(--burg);color:var(--burg)}
+.btn-join{
+  padding:8px 20px;border-radius:100px;
+  background:var(--burg);color:white;
+  font-size:13px;font-weight:600;letter-spacing:.02em;transition:all .2s;
+}
+.btn-join:hover{background:var(--burg2);transform:translateY(-1px);box-shadow:0 4px 14px var(--burg-mid)}
+
+/* Cat nav */
+.cat-nav{
+  border-top:1px solid var(--border);padding:0 5%;
+  display:flex;gap:0;overflow-x:auto;scrollbar-width:none;
+}
+.cat-nav::-webkit-scrollbar{display:none}
+.cna{
+  padding:10px 15px;font-size:12.5px;font-weight:500;color:var(--stone);
+  white-space:nowrap;background:none;transition:all .2s;
+  border-bottom:2px solid transparent;
+}
+.cna:hover{color:var(--burg)}
+.cna.on{color:var(--burg);border-bottom-color:var(--burg);font-weight:600}
+
+/* ── HERO ── */
+.hero{
+  display:grid;grid-template-columns:1fr 1fr;
+  min-height:86vh;background:var(--slate2);overflow:hidden;
+}
+.hero-l{
+  padding:72px 5% 56px;display:flex;flex-direction:column;justify-content:center;
+  position:relative;z-index:2;
+}
+.hero-l::before{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(120deg,rgba(123,36,72,.14) 0%,transparent 60%);
+  pointer-events:none;
+}
+.h-eyebrow{
+  display:flex;align-items:center;gap:10px;
+  font-size:10.5px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--rose);margin-bottom:22px;
+}
+.h-eyebrow-line{width:26px;height:1px;background:var(--rose)}
+.hero-l h1{
+  font-family:var(--f-serif);
+  font-size:clamp(42px,5vw,72px);
+  font-weight:400;line-height:1.06;
+  color:var(--champ);margin-bottom:6px;letter-spacing:-.5px;
+}
+.hero-l h1 em{font-style:italic;color:var(--rose)}
+.hero-l h1 strong{font-weight:700;color:white}
+.hero-sub{
+  font-size:15.5px;color:rgba(240,224,196,.45);line-height:1.8;
+  max-width:400px;margin-bottom:38px;font-weight:300;
+}
+.hero-btns{display:flex;gap:12px;margin-bottom:50px;flex-wrap:wrap}
+.btn-hp{
+  padding:13px 30px;border-radius:100px;
+  background:var(--burg);color:white;
+  font-size:14px;font-weight:600;letter-spacing:.03em;transition:all .25s;
+}
+.btn-hp:hover{background:var(--burg2);transform:translateY(-2px);box-shadow:0 8px 24px rgba(123,36,72,.5)}
+.btn-hs{
+  padding:13px 30px;border-radius:100px;
+  background:transparent;color:var(--champ);
+  border:1.5px solid rgba(240,224,196,.2);
+  font-size:14px;font-weight:400;transition:all .25s;
+}
+.btn-hs:hover{border-color:var(--rose);color:var(--rose)}
+.hero-stats{display:flex;gap:36px;padding-top:30px;border-top:1px solid rgba(255,255,255,.07)}
+.hs-n{font-family:var(--f-serif);font-size:26px;font-weight:700;color:white;line-height:1}
+.hs-n em{color:var(--rose);font-style:normal}
+.hs-l{font-size:10.5px;color:rgba(240,224,196,.35);margin-top:4px;letter-spacing:.08em;text-transform:uppercase}
+
+/* Hero right wall */
+.hero-r{
+  display:grid;grid-template-columns:1fr 1fr;
+  grid-template-rows:1fr 1fr;gap:2px;
+  background:var(--slate);
+}
+.hprod{
+  position:relative;overflow:hidden;cursor:pointer;
+  background:var(--slate2);transition:all .4s;
+}
+.hprod:first-child{grid-row:span 2}
+.hprod img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease;display:block;min-height:140px}
+.hprod:hover img{transform:scale(1.06)}
+.hprod-overlay{
+  position:absolute;inset:0;
+  background:linear-gradient(to top,rgba(20,26,32,.85) 0%,transparent 55%);
+  opacity:.55;transition:opacity .3s;
+}
+.hprod:hover .hprod-overlay{opacity:.8}
+.hprod-info{position:absolute;bottom:0;left:0;right:0;padding:18px 16px;z-index:2}
+.hpi-badge{
+  display:inline-block;background:var(--burg);color:white;
+  font-size:9px;font-weight:700;padding:3px 8px;border-radius:4px;
+  letter-spacing:.07em;text-transform:uppercase;margin-bottom:7px;
+}
+.hpi-name{font-size:13.5px;font-weight:500;color:white;line-height:1.3}
+.hpi-price{font-size:15px;font-weight:700;color:var(--champ);margin-top:3px}
+.hprod:first-child .hpi-name{font-size:17px}
+.hprod:first-child .hpi-price{font-size:20px}
+.hprod:first-child .hprod-info{padding:24px 22px}
+
+/* ── MARQUEE ── */
+.mq{background:var(--burg);overflow:hidden;padding:10px 0}
+.mq-t{display:flex;width:max-content;animation:mqs 34s linear infinite}
+@keyframes mqs{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.mq-i{
+  padding:0 28px;font-size:11px;font-weight:600;letter-spacing:.16em;
+  text-transform:uppercase;color:rgba(253,250,246,.6);white-space:nowrap;
+  display:flex;align-items:center;gap:18px;
+}
+.mqdot{width:3px;height:3px;border-radius:50%;background:rgba(253,250,246,.25)}
+
+/* ── SECTION ── */
+.sec{padding:68px 5%}
+.sec-label{
+  font-size:10.5px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--rose);display:flex;align-items:center;gap:10px;margin-bottom:12px;
+}
+.sec-label::before{content:'';width:20px;height:1px;background:var(--rose)}
+.sec-h{
+  font-family:var(--f-serif);
+  font-size:clamp(26px,3.5vw,44px);font-weight:400;
+  color:var(--ink);margin-bottom:10px;line-height:1.12;letter-spacing:-.2px;
+}
+.sec-h em{font-style:italic;color:var(--burg)}
+.sec-h strong{font-weight:700}
+.sec-sub{font-size:15px;color:var(--stone);max-width:480px;font-weight:300;line-height:1.7}
+
+/* ── CATEGORY STRIP ── */
+.catstrip{background:var(--white);padding:52px 5%}
+.cat-grid{
+  display:grid;grid-template-columns:repeat(8,1fr);
+  gap:10px;margin-top:36px;
+}
+@media(max-width:1100px){.cat-grid{grid-template-columns:repeat(4,1fr)}}
+@media(max-width:550px){.cat-grid{grid-template-columns:repeat(3,1fr)}}
+.ccard{
+  border-radius:var(--r2);border:1.5px solid var(--border);
+  padding:18px 8px 14px;text-align:center;cursor:pointer;
+  transition:all .25s;background:var(--ivory);
+}
+.ccard:hover{border-color:var(--burg);transform:translateY(-3px);box-shadow:var(--shadow-md);background:var(--burg-light)}
+.ccard img{
+  width:50px;height:50px;border-radius:50%;object-fit:cover;
+  margin:0 auto 9px;border:2px solid var(--ivory3);transition:border-color .2s;
+}
+.ccard:hover img{border-color:var(--burg)}
+.ccard-name{font-size:12px;font-weight:600;color:var(--ink)}
+.ccard-cnt{font-size:10px;color:var(--stone2);margin-top:2px}
+
+/* ── PRODUCT SECTION ── */
+.prod-sec{background:var(--ivory);padding:60px 5%}
+.prod-bar{
+  display:flex;align-items:center;gap:10px;
+  margin:24px 0 20px;flex-wrap:wrap;
+}
+.filters{display:flex;gap:7px;flex:1;flex-wrap:wrap}
+.fp{
+  padding:7px 16px;border-radius:100px;font-size:12.5px;font-weight:600;
+  border:1.5px solid var(--border2);color:var(--stone);background:none;transition:all .2s;
+}
+.fp:hover{border-color:var(--burg);color:var(--burg)}
+.fp.on{background:var(--burg);color:white;border-color:var(--burg)}
+.sort-grp{display:flex;align-items:center;gap:8px;flex-shrink:0}
+.sort-grp label{font-size:12px;color:var(--stone);font-weight:500}
+.sort-sel{
+  padding:7px 11px;border-radius:var(--r);border:1.5px solid var(--border2);
+  background:var(--white);font-family:var(--f-sans);font-size:12.5px;color:var(--ink);outline:none;cursor:pointer;
+}
+
+/* Product grid */
+.pgrid{display:grid;grid-template-columns:repeat(5,1fr);gap:16px}
+@media(max-width:1300px){.pgrid{grid-template-columns:repeat(4,1fr)}}
+@media(max-width:1000px){.pgrid{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:640px){.pgrid{grid-template-columns:repeat(2,1fr)}}
+
+.pcard{
+  background:var(--white);border-radius:var(--r2);
+  border:1px solid var(--border);overflow:hidden;
+  transition:all .3s;display:flex;flex-direction:column;
+  position:relative;
+}
+.pcard:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg);border-color:var(--ivory3)}
+.pcard-img{
+  height:210px;overflow:hidden;background:var(--ivory2);display:flex;align-items:center;justify-content:center;
+  position:relative;flex-shrink:0;
+}
+.pcard-img img{
+  width:100%;height:100%;object-fit:cover;
+  transition:transform .45s ease;display:block;
+}
+.pcard:hover .pcard-img img{transform:scale(1.06)}
+.pbadges{position:absolute;top:9px;left:9px;display:flex;flex-direction:column;gap:4px;z-index:2}
+.pbadge{font-size:9.5px;font-weight:700;padding:3px 7px;border-radius:4px;letter-spacing:.05em;text-transform:uppercase}
+.pb-sale{background:var(--burg);color:white}
+.pb-new{background:var(--slate);color:white}
+.pb-top{background:var(--champ2);color:var(--burg3)}
+.pwish{
+  position:absolute;top:9px;right:9px;z-index:2;
+  width:29px;height:29px;border-radius:50%;
+  background:rgba(255,255,255,.9);
+  display:flex;align-items:center;justify-content:center;
+  opacity:0;transition:all .2s;box-shadow:var(--shadow-sm);
+}
+.pcard:hover .pwish{opacity:1}
+.pwish.on{opacity:1;background:var(--burg-light)}
+.pwish svg{transition:all .2s}
+.pwish.on svg{stroke:var(--burg);fill:var(--burg)}
+.pbody{padding:13px 13px 15px;display:flex;flex-direction:column;flex:1}
+.pbrand{font-size:10px;font-weight:700;color:var(--stone);letter-spacing:.1em;text-transform:uppercase;margin-bottom:3px}
+.pname{
+  font-size:13px;font-weight:500;color:var(--ink);line-height:1.4;margin-bottom:8px;
+  display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;
+}
+.prating{display:flex;align-items:center;gap:5px;margin-bottom:9px}
+.stars{display:flex;gap:1px}
+.star{width:9px;height:9px;fill:var(--ivory3)}
+.star.on{fill:#C4881A}
+.prating-n{font-size:11px;color:var(--stone);font-weight:500}
+.ppricing{display:flex;align-items:baseline;gap:6px;flex-wrap:wrap;margin-bottom:11px}
+.pprice{font-family:var(--f-serif);font-size:17px;font-weight:700;color:var(--burg)}
+.pmrp{font-size:11.5px;color:var(--stone2);text-decoration:line-through}
+.poff{font-size:10.5px;font-weight:700;color:var(--burg);background:var(--burg-light);padding:2px 6px;border-radius:4px}
+.psource{font-size:10px;color:var(--stone2);margin-bottom:10px}
+.pactions{display:flex;gap:7px;margin-top:auto}
+.btn-buy{
+  flex:1;padding:10px 8px;border-radius:var(--r);
+  background:var(--burg);color:white;
+  font-size:12px;font-weight:600;letter-spacing:.03em;transition:all .2s;
+}
+.btn-buy:hover{background:var(--burg2)}
+.btn-view{
+  padding:10px 12px;border-radius:var(--r);
+  background:none;border:1.5px solid var(--border2);
+  color:var(--stone);font-size:12px;font-weight:500;transition:all .2s;
+}
+.btn-view:hover{border-color:var(--burg);color:var(--burg)}
+.paff{
+  font-size:9.5px;color:var(--stone2);text-align:center;
+  padding:7px;border-top:1px solid var(--border);
+  display:flex;align-items:center;justify-content:center;gap:4px;
+}
+
+/* Pagination / load more */
+.load-more-wrap{text-align:center;margin-top:40px}
+.btn-load{
+  padding:13px 36px;border-radius:100px;
+  border:1.5px solid var(--border2);background:var(--white);
+  font-size:14px;font-weight:600;color:var(--ink);
+  transition:all .25s;
+}
+.btn-load:hover{border-color:var(--burg);color:var(--burg)}
+
+/* ── DEAL SECTION ── */
+.deal-sec{background:var(--slate2);padding:60px 5%}
+.deal-sec .sec-label{color:var(--champ2)}
+.deal-sec .sec-label::before{background:var(--champ2)}
+.deal-sec .sec-h{color:white}
+.deal-sec .sec-h em{color:var(--champ)}
+.deal-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:16px;margin-top:36px}
+@media(max-width:900px){.deal-grid{grid-template-columns:1fr}}
+.deal-main{
+  background:var(--slate);border-radius:var(--r3);overflow:hidden;
+  cursor:pointer;transition:transform .3s;border:1px solid rgba(255,255,255,.05);
+  display:flex;flex-direction:column;
+}
+.deal-main:hover{transform:scale(1.01)}
+.deal-main-img{height:260px;overflow:hidden}
+.deal-main-img img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.deal-main:hover .deal-main-img img{transform:scale(1.04)}
+.deal-main-body{padding:22px}
+.dtag{
+  display:inline-block;background:var(--burg);color:white;
+  font-size:9.5px;font-weight:700;padding:3px 9px;border-radius:4px;
+  letter-spacing:.07em;text-transform:uppercase;margin-bottom:10px;
+}
+.deal-main-name{font-family:var(--f-serif);font-size:19px;font-weight:600;color:white;margin-bottom:4px;line-height:1.3}
+.deal-main-brand{font-size:10.5px;color:rgba(255,255,255,.35);letter-spacing:.08em;text-transform:uppercase;margin-bottom:12px}
+.deal-main-price{font-family:var(--f-serif);font-size:26px;font-weight:700;color:var(--champ)}
+.deal-main-mrp{font-size:12.5px;color:rgba(255,255,255,.28);text-decoration:line-through;margin-top:2px}
+.deal-main-btn{
+  margin-top:16px;width:100%;padding:11px;border-radius:100px;
+  background:var(--burg);color:white;
+  font-size:13px;font-weight:600;transition:all .2s;
+}
+.deal-main-btn:hover{background:var(--burg2)}
+.deal-sm{
+  background:var(--slate);border-radius:var(--r2);overflow:hidden;
+  cursor:pointer;transition:transform .25s;
+  border:1px solid rgba(255,255,255,.05);display:flex;flex-direction:column;
+}
+.deal-sm:hover{transform:translateY(-3px)}
+.deal-sm-img{height:150px;overflow:hidden}
+.deal-sm-img img{width:100%;height:100%;object-fit:cover}
+.deal-sm-body{padding:14px;flex:1}
+.deal-sm-name{font-size:13px;font-weight:500;color:white;margin-bottom:5px;line-height:1.35;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.deal-sm-price{font-family:var(--f-serif);font-size:17px;font-weight:700;color:var(--champ)}
+.deal-sm-off{font-size:10.5px;color:var(--rose);margin-top:2px}
+
+/* ── FEATURES ── */
+.features-sec{background:var(--white);padding:68px 5%}
+.feat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:44px}
+@media(max-width:900px){.feat-grid{grid-template-columns:1fr 1fr}}
+.fcard{
+  padding:26px 20px;border-radius:var(--r2);
+  border:1px solid var(--border);transition:all .3s;
+}
+.fcard:hover{border-color:var(--burg);box-shadow:var(--shadow-md);transform:translateY(-2px)}
+.fcard-icon{
+  width:42px;height:42px;border-radius:11px;
+  background:var(--burg-light);display:flex;align-items:center;justify-content:center;margin-bottom:15px;
+}
+.fcard-icon svg{color:var(--burg)}
+.fcard-title{font-size:14px;font-weight:700;color:var(--ink);margin-bottom:7px}
+.fcard-desc{font-size:12.5px;color:var(--stone);line-height:1.65}
+
+/* ── SHOP OWNER BANNER ── */
+.shop-banner{
+  margin:0 5% 64px;border-radius:var(--r4);overflow:hidden;
+  display:grid;grid-template-columns:1fr 1fr;
+  background:var(--burg3);border:1px solid rgba(123,36,72,.3);
+}
+@media(max-width:800px){.shop-banner{grid-template-columns:1fr}}
+.sb-l{padding:48px 44px;display:flex;flex-direction:column;justify-content:center}
+.sb-tag{
+  display:inline-block;font-size:10px;font-weight:700;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--rose);
+  background:rgba(196,122,146,.1);border:1px solid rgba(196,122,146,.2);
+  padding:5px 13px;border-radius:100px;margin-bottom:18px;
+}
+.sb-h{font-family:var(--f-serif);font-size:clamp(22px,3vw,38px);font-weight:400;color:white;line-height:1.2;margin-bottom:9px}
+.sb-h em{font-style:italic;color:var(--champ)}
+.sb-desc{font-size:13.5px;color:rgba(253,250,246,.42);line-height:1.7;margin-bottom:26px;font-weight:300}
+.sb-btns{display:flex;gap:11px;flex-wrap:wrap}
+.btn-sb-p{
+  padding:11px 24px;border-radius:100px;
+  background:var(--champ);color:var(--burg3);
+  font-size:13px;font-weight:700;transition:all .2s;
+}
+.btn-sb-p:hover{background:white}
+.btn-sb-s{
+  padding:11px 24px;border-radius:100px;
+  background:transparent;color:rgba(253,250,246,.55);
+  border:1.5px solid rgba(253,250,246,.15);
+  font-size:13px;font-weight:500;transition:all .2s;
+}
+.btn-sb-s:hover{border-color:var(--champ);color:var(--champ)}
+.sb-r{position:relative;overflow:hidden;min-height:260px}
+.sb-r img{width:100%;height:100%;object-fit:cover;opacity:.6}
+.sb-r::before{
+  content:'';position:absolute;top:0;left:0;bottom:0;width:70px;z-index:1;
+  background:linear-gradient(to right,var(--burg3),transparent);
+}
+.sb-price{
+  position:absolute;bottom:20px;right:20px;z-index:2;
+  background:rgba(20,26,32,.85);backdrop-filter:blur(8px);
+  border:1px solid rgba(255,255,255,.1);border-radius:10px;padding:11px 15px;text-align:right;
+}
+.sb-pt-from{font-size:10px;color:rgba(255,255,255,.35);text-transform:uppercase;letter-spacing:.08em}
+.sb-pt-price{font-family:var(--f-serif);font-size:20px;font-weight:700;color:var(--champ)}
+
+/* ── FOOTER ── */
+footer{background:var(--slate2);color:rgba(253,250,246,.42);padding:60px 5% 26px}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr 1fr;gap:36px;margin-bottom:44px}
+@media(max-width:1000px){.footer-grid{grid-template-columns:1fr 1fr;row-gap:28px}}
+.fbrand{font-family:var(--f-serif);font-size:22px;font-weight:700;color:white;margin-bottom:10px}
+.fdesc{font-size:13px;line-height:1.75;max-width:220px;margin-bottom:18px}
+.fsocs{display:flex;gap:7px}
+.fsoc{
+  width:32px;height:32px;border-radius:7px;
+  background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.07);
+  display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all .2s;
+}
+.fsoc:hover{background:var(--burg);border-color:var(--burg)}
+.fsoc svg{color:rgba(255,255,255,.45);transition:color .2s}
+.fsoc:hover svg{color:white}
+.fcolh{font-size:10.5px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:white;margin-bottom:14px}
+.flinks{list-style:none;display:flex;flex-direction:column;gap:8px}
+.flinks a{font-size:13px;color:rgba(253,250,246,.38);transition:color .2s}
+.flinks a:hover{color:var(--champ)}
+.fbot{
+  border-top:1px solid rgba(255,255,255,.06);padding-top:20px;
+  display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;
+}
+.fcopy{font-size:12px}
+.faff{font-size:11px;color:rgba(253,250,246,.22);max-width:480px;text-align:right;line-height:1.5}
+
+/* ── AUTH MODAL (only for buy) ── */
+.modal-ov{
+  position:fixed;inset:0;z-index:1000;
+  background:rgba(20,26,32,.75);backdrop-filter:blur(8px);
+  display:flex;align-items:center;justify-content:center;padding:20px;
+  opacity:0;pointer-events:none;transition:opacity .3s;
+}
+.modal-ov.open{opacity:1;pointer-events:all}
+.modal{
+  background:var(--white);border-radius:var(--r4);width:100%;max-width:430px;
+  overflow:hidden;transform:scale(.94) translateY(20px);transition:transform .3s;
+  box-shadow:0 40px 100px rgba(20,26,32,.4);
+}
+.modal-ov.open .modal{transform:scale(1) translateY(0)}
+.mhead{
+  background:var(--slate2);padding:30px 34px 26px;text-align:center;position:relative;
+}
+.mclose{
+  position:absolute;top:12px;right:12px;
+  width:30px;height:30px;border-radius:50%;
+  background:rgba(255,255,255,.07);
+  color:rgba(255,255,255,.5);font-size:14px;
+  display:flex;align-items:center;justify-content:center;transition:all .2s;
+}
+.mclose:hover{background:rgba(255,255,255,.13);color:white}
+.mlogo{font-family:var(--f-serif);font-size:20px;font-weight:700;color:white;margin-bottom:12px}
+.mtitle{font-family:var(--f-serif);font-size:20px;font-weight:400;color:white;margin-bottom:4px}
+.msub{font-size:12.5px;color:rgba(253,250,246,.38)}
+/* Product preview in modal */
+.mprod-preview{
+  display:flex;align-items:center;gap:12px;
+  background:rgba(255,255,255,.05);border-radius:10px;padding:10px;
+  margin-top:14px;border:1px solid rgba(255,255,255,.08);text-align:left;
+}
+.mprod-img{width:44px;height:44px;border-radius:8px;object-fit:cover;flex-shrink:0;background:var(--slate)}
+.mprod-name{font-size:12px;color:white;font-weight:500;line-height:1.3}
+.mprod-price{font-size:13px;font-weight:700;color:var(--champ);margin-top:2px}
+.mbody{padding:24px 34px}
+.mtabs{display:flex;background:var(--ivory2);border-radius:7px;padding:3px;gap:3px;margin-bottom:20px}
+.mtab{
+  flex:1;padding:8px;border-radius:5px;background:none;
+  font-size:13px;font-weight:600;color:var(--stone);transition:all .2s;
+}
+.mtab.on{background:var(--white);color:var(--ink);box-shadow:var(--shadow-sm)}
+.soc-btn{
+  width:100%;padding:11px;border-radius:var(--r);
+  border:1.5px solid var(--border2);background:var(--white);
+  font-size:13.5px;font-weight:500;color:var(--ink);
+  transition:all .2s;margin-bottom:9px;
+  display:flex;align-items:center;justify-content:center;gap:10px;
+}
+.soc-btn:hover{border-color:var(--burg);background:var(--burg-light)}
+.mdiv{display:flex;align-items:center;gap:10px;margin:12px 0}
+.mdiv::before,.mdiv::after{content:'';flex:1;height:1px;background:var(--border2)}
+.mdiv span{font-size:11px;color:var(--stone2)}
+.mf{margin-bottom:12px}
+.mf label{font-size:11px;font-weight:700;color:var(--ink);display:block;margin-bottom:5px;letter-spacing:.04em}
+.mf input{
+  width:100%;padding:11px 13px;border-radius:var(--r);
+  border:1.5px solid var(--border2);background:var(--ivory2);
+  font-family:var(--f-sans);font-size:13.5px;color:var(--ink);outline:none;transition:all .2s;
+}
+.mf input:focus{border-color:var(--burg);background:var(--white);box-shadow:0 0 0 3px var(--burg-mid)}
+.otp-row{display:flex;gap:8px}
+.otp-row input{flex:1}
+.sotp{
+  padding:11px 13px;border-radius:var(--r);
+  border:1.5px solid var(--burg);background:none;
+  color:var(--burg);font-size:12px;font-weight:700;white-space:nowrap;transition:all .2s;
+}
+.sotp:hover{background:var(--burg);color:white}
+.otp-boxes{display:none;grid-template-columns:repeat(6,1fr);gap:6px;margin-top:9px}
+.otp-boxes.show{display:grid}
+.ob{
+  padding:11px 4px;text-align:center;border-radius:var(--r);
+  border:1.5px solid var(--border2);background:var(--ivory2);
+  font-size:17px;font-weight:700;color:var(--ink);outline:none;
+}
+.ob:focus{border-color:var(--burg);background:var(--white)}
+.msubmit{
+  width:100%;padding:12px;border-radius:100px;
+  background:var(--burg);color:white;
+  font-size:14px;font-weight:700;letter-spacing:.04em;
+  transition:all .25s;margin-top:14px;
+  box-shadow:0 4px 14px var(--burg-mid);
+}
+.msubmit:hover{background:var(--burg2);transform:translateY(-1px)}
+.mfoot{font-size:11.5px;color:var(--stone2);text-align:center;margin-top:11px;line-height:1.5}
+.mfoot a{color:var(--burg);font-weight:600}
+.mphone{display:none}
+
+/* ── TOAST ── */
+.toast{
+  position:fixed;bottom:18px;right:18px;z-index:2000;
+  background:var(--slate2);color:white;
+  padding:11px 17px;border-radius:9px;font-size:13px;font-weight:500;
+  transform:translateY(55px);opacity:0;transition:all .3s;
+  box-shadow:var(--shadow-lg);border:1px solid rgba(255,255,255,.06);max-width:290px;
+}
+.toast.show{transform:translateY(0);opacity:1}
+
+/* ── NO RESULTS ── */
+.no-results{
+  grid-column:1/-1;text-align:center;padding:60px 20px;
+}
+.no-results h3{font-family:var(--f-serif);font-size:24px;font-weight:400;color:var(--ink);margin-bottom:8px}
+.no-results p{font-size:14px;color:var(--stone)}
+
+/* ── RESPONSIVE ── */
+@media(max-width:900px){
+  .hero{grid-template-columns:1fr;min-height:auto}
+  .hero-r{height:280px;display:flex}
+  .hprod:first-child{flex:2}
+  .nav-links{display:none}
+  .nav-search{max-width:200px}
+  .deal-grid{grid-template-columns:1fr}
+  .footer-grid{grid-template-columns:1fr 1fr}
+  .btn-signin{display:none}
+}
+@media(max-width:600px){
+  .cat-grid{grid-template-columns:repeat(3,1fr)}
+  .pgrid{grid-template-columns:repeat(2,1fr)}
+  .feat-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<div class="ann">Free delivery on orders above ₹499 &nbsp;·&nbsp; <strong>New arrivals daily</strong> &nbsp;·&nbsp; Direct from verified Indian boutiques</div>
+
+<!-- NAV -->
+<nav id="nav">
+  <div class="nav-top">
+    <div class="logo">Trendly <span>Fashion</span></div>
+    <div class="nav-search">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+      <input type="text" id="searchIn" placeholder="Search sarees, watches, shoes, bags..." oninput="doSearch(this.value)"/>
+    </div>
+    <div class="nav-links">
+      <button class="nl" onclick="setNavCat('women',this)">Women</button>
+      <button class="nl" onclick="setNavCat('men',this)">Men</button>
+      <button class="nl" onclick="setNavCat('ethnic',this)">Ethnic</button>
+      <button class="nl" onclick="setNavCat('footwear',this)">Footwear</button>
+      <button class="nl" onclick="setNavCat('watches',this)">Watches</button>
+      <button class="nl" onclick="setNavCat('bags',this)">Bags</button>
+      <button class="nl" onclick="setNavCat('jewellery',this)">Jewellery</button>
+    </div>
+    <div class="nav-right">
+      <button class="nav-icon" onclick="toast('Sign in to view your wishlist')" title="Wishlist">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+        <span class="nbadge" id="wishCount">0</span>
+      </button>
+      <button class="btn-signin" onclick="openModal(null,'in')">Sign In</button>
+      <button class="btn-join" onclick="openModal(null,'up')">Join Free</button>
+    </div>
+  </div>
+  <div class="cat-nav" id="catNav">
+    <button class="cna on" onclick="setCat('all',this)">All Products</button>
+    <button class="cna" onclick="setCat('women',this)">Women's Clothing</button>
+    <button class="cna" onclick="setCat('men',this)">Men's Clothing</button>
+    <button class="cna" onclick="setCat('ethnic',this)">Ethnic Wear</button>
+    <button class="cna" onclick="setCat('footwear',this)">Footwear</button>
+    <button class="cna" onclick="setCat('watches',this)">Watches</button>
+    <button class="cna" onclick="setCat('bags',this)">Bags & Wallets</button>
+    <button class="cna" onclick="setCat('jewellery',this)">Jewellery</button>
+    <button class="cna" onclick="setCat('sunglasses',this)">Sunglasses</button>
+    <button class="cna" onclick="setCat('kids',this)">Kids</button>
+    <button class="cna" onclick="setCat('acc',this)">Accessories</button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-l">
+    <div class="h-eyebrow"><span class="h-eyebrow-line"></span>India's Fashion Destination</div>
+    <h1>Discover<br><em>authentic</em><br><strong>Indian fashion</strong></h1>
+    <p class="hero-sub">From sarees to sneakers, kurtis to watches — everything fashion, directly from verified Indian boutiques and retailers.</p>
+    <div class="hero-btns">
+      <button class="btn-hp" onclick="document.getElementById('products').scrollIntoView({behavior:'smooth'})">Shop Now</button>
+      <button class="btn-hs" onclick="document.getElementById('categories').scrollIntoView({behavior:'smooth'})">Browse Categories</button>
+    </div>
+    <div class="hero-stats">
+      <div><div class="hs-n">50K<em>+</em></div><div class="hs-l">Products</div></div>
+      <div><div class="hs-n">2.4K<em>+</em></div><div class="hs-l">Shops</div></div>
+      <div><div class="hs-n">18<em>+</em></div><div class="hs-l">States</div></div>
+    </div>
+  </div>
+  <div class="hero-r">
+    <div class="hprod" onclick="setCat('ethnic',document.querySelector('[onclick*=\"ethnic\"]'))">
+      <img src="https://https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=800&q=85" alt="Ethnic Wear" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?w=400&q=80'"/>
+      <div class="hprod-overlay"></div>
+      <div class="hprod-info"><div class="hpi-badge">Best Seller</div><div class="hpi-name">Sarees & Ethnic Wear</div><div class="hpi-price">From ₹299</div></div>
+    </div>
+    <div class="hprod" onclick="setCat('footwear',document.querySelector('[onclick*=\"footwear\"]'))">
+      <img src="https://https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=800&q=85" alt="Footwear" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=400&q=80'"/>
+      <div class="hprod-overlay"></div>
+      <div class="hprod-info"><div class="hpi-badge">Trending</div><div class="hpi-name">Footwear</div><div class="hpi-price">From ₹199</div></div>
+    </div>
+    <div class="hprod" onclick="setCat('watches',document.querySelector('[onclick*=\"watches\"]'))">
+      <img src="https://https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=800&q=85" alt="Watches" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=400&q=80'"/>
+      <div class="hprod-overlay"></div>
+      <div class="hprod-info"><div class="hpi-badge">New</div><div class="hpi-name">Watches</div><div class="hpi-price">From ₹449</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="mq">
+  <div class="mq-t">
+    <div class="mq-i">Sarees<span class="mqdot"></span></div><div class="mq-i">Kurtis<span class="mqdot"></span></div><div class="mq-i">Lehengas<span class="mqdot"></span></div><div class="mq-i">Western Wear<span class="mqdot"></span></div><div class="mq-i">Men's Shirts<span class="mqdot"></span></div><div class="mq-i">Sherwanis<span class="mqdot"></span></div><div class="mq-i">Footwear<span class="mqdot"></span></div><div class="mq-i">Watches<span class="mqdot"></span></div><div class="mq-i">Handbags<span class="mqdot"></span></div><div class="mq-i">Jewellery<span class="mqdot"></span></div><div class="mq-i">Sunglasses<span class="mqdot"></span></div><div class="mq-i">Kids Wear<span class="mqdot"></span></div><div class="mq-i">Bridal<span class="mqdot"></span></div><div class="mq-i">Accessories<span class="mqdot"></span></div>
+    <div class="mq-i">Sarees<span class="mqdot"></span></div><div class="mq-i">Kurtis<span class="mqdot"></span></div><div class="mq-i">Lehengas<span class="mqdot"></span></div><div class="mq-i">Western Wear<span class="mqdot"></span></div><div class="mq-i">Men's Shirts<span class="mqdot"></span></div><div class="mq-i">Sherwanis<span class="mqdot"></span></div><div class="mq-i">Footwear<span class="mqdot"></span></div><div class="mq-i">Watches<span class="mqdot"></span></div><div class="mq-i">Handbags<span class="mqdot"></span></div><div class="mq-i">Jewellery<span class="mqdot"></span></div><div class="mq-i">Sunglasses<span class="mqdot"></span></div><div class="mq-i">Kids Wear<span class="mqdot"></span></div><div class="mq-i">Bridal<span class="mqdot"></span></div><div class="mq-i">Accessories<span class="mqdot"></span></div>
+  </div>
+</div>
+
+<!-- CATEGORIES -->
+<section class="catstrip" id="categories">
+  <div class="sec-label">Shop by category</div>
+  <h2 class="sec-h">Everything <em>fashion</em></h2>
+  <div class="cat-grid" id="catGrid"></div>
+</section>
+
+<!-- DEALS -->
+<section class="deal-sec" id="deals">
+  <div class="sec-label">Limited time offers</div>
+  <h2 class="sec-h">Deal of the <em>Day</em></h2>
+  <div class="deal-grid" id="dealGrid"></div>
+</section>
+
+<!-- PRODUCTS -->
+<section class="prod-sec" id="products">
+  <div style="display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:12px">
+    <div>
+      <div class="sec-label">Sorted by price — lowest first</div>
+      <h2 class="sec-h">Best <em>value</em> picks</h2>
+    </div>
+    <div style="font-size:12.5px;color:var(--stone)">
+      <span id="prodCount">0</span> products found
+    </div>
+  </div>
+  <div class="prod-bar">
+    <div class="filters" id="filterBtns">
+      <button class="fp on" onclick="setFilter('all',this)">All</button>
+      <button class="fp" onclick="setFilter('women',this)">Women</button>
+      <button class="fp" onclick="setFilter('men',this)">Men</button>
+      <button class="fp" onclick="setFilter('ethnic',this)">Ethnic</button>
+      <button class="fp" onclick="setFilter('footwear',this)">Footwear</button>
+      <button class="fp" onclick="setFilter('watches',this)">Watches</button>
+      <button class="fp" onclick="setFilter('bags',this)">Bags</button>
+      <button class="fp" onclick="setFilter('jewellery',this)">Jewellery</button>
+      <button class="fp" onclick="setFilter('sunglasses',this)">Sunglasses</button>
+      <button class="fp" onclick="setFilter('kids',this)">Kids</button>
+    </div>
+    <div class="sort-grp">
+      <label>Sort</label>
+      <select class="sort-sel" id="sortSel" onchange="render()">
+        <option value="price-asc" selected>Price: Low to High</option>
+        <option value="price-desc">Price: High to Low</option>
+        <option value="discount">Biggest Discount</option>
+        <option value="rating">Top Rated</option>
+      </select>
+    </div>
+  </div>
+  <div class="pgrid" id="prodGrid"></div>
+  <div class="load-more-wrap">
+    <button class="btn-load" id="loadMoreBtn" onclick="loadMore()">Load More Products</button>
+  </div>
+</section>
+
+<!-- WHY TRENDLY -->
+<section class="features-sec">
+  <div style="text-align:center">
+    <div class="sec-label" style="justify-content:center">Why Trendly</div>
+    <h2 class="sec-h" style="text-align:center">Shopping that <em>makes sense</em></h2>
+  </div>
+  <div class="feat-grid">
+    <div class="fcard">
+      <div class="fcard-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
+      <div class="fcard-title">Direct from verified shops</div>
+      <div class="fcard-desc">Every product comes directly from a verified Indian boutique or retailer. Real shops, real prices.</div>
+    </div>
+    <div class="fcard">
+      <div class="fcard-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+      <div class="fcard-title">Lowest price, always first</div>
+      <div class="fcard-desc">Products are sorted by lowest price by default. No hidden costs — what you see is what you pay.</div>
+    </div>
+    <div class="fcard">
+      <div class="fcard-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+      <div class="fcard-title">Chat with sellers directly</div>
+      <div class="fcard-desc">Message any shop via WhatsApp or in-app. Ask about sizes, custom orders, or bulk deals.</div>
+    </div>
+    <div class="fcard">
+      <div class="fcard-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
+      <div class="fcard-title">100% verified listings</div>
+      <div class="fcard-desc">Every shop is verified before listing. Products are reviewed for quality. Your trust is our priority.</div>
+    </div>
+    <div class="fcard">
+      <div class="fcard-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+      <div class="fcard-title">Free to browse, always</div>
+      <div class="fcard-desc">No sign-in required to browse. Sign up only when you're ready to buy — completely free account.</div>
+    </div>
+    <div class="fcard">
+      <div class="fcard-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+      <div class="fcard-title">Local & national reach</div>
+      <div class="fcard-desc">Find boutiques in your city or shop from heritage weavers in Varanasi, Kanchipuram, and Jaipur.</div>
+    </div>
+    <div class="fcard">
+      <div class="fcard-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg></div>
+      <div class="fcard-title">Price drop alerts</div>
+      <div class="fcard-desc">Save items to your wishlist and get notified instantly when prices drop or stock gets low.</div>
+    </div>
+    <div class="fcard">
+      <div class="fcard-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg></div>
+      <div class="fcard-title">App launching soon</div>
+      <div class="fcard-desc">Android & iOS app coming soon. Sign up now for early access and exclusive launch offers.</div>
+    </div>
+  </div>
+</section>
+
+<!-- SHOP OWNER BANNER -->
+<div class="shop-banner">
+  <div class="sb-l">
+    <div class="sb-tag">For boutiques & retailers</div>
+    <h2 class="sb-h">Grow your fashion<br>business <em>online</em></h2>
+    <p class="sb-desc">Join 2,400+ shops on Trendly. List your products, reach lakhs of shoppers across India — starting at just ₹149 registration.</p>
+    <div class="sb-btns">
+      <button class="btn-sb-p" onclick="toast('Opening retailer portal...')">Register Your Shop</button>
+      <button class="btn-sb-s" onclick="toast('Opening seller guide...')">Learn More</button>
+    </div>
+  </div>
+  <div class="sb-r">
+    <img src="https://https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=800&q=85" alt="Fashion" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=600&q=80'"/>
+    <div class="sb-price"><div class="sb-pt-from">Starting from</div><div class="sb-pt-price">₹149 / year</div></div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div>
+      <div class="fbrand">Trendly</div>
+      <div class="fdesc">India's complete fashion marketplace — clothes, footwear, watches, bags and jewellery from verified Indian boutiques and retailers.</div>
+      <div class="fsocs">
+        <div class="fsoc"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></div>
+        <div class="fsoc"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></div>
+        <div class="fsoc"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/></svg></div>
+        <div class="fsoc"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 0 0-1.95 1.96A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58A2.78 2.78 0 0 0 3.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"/></svg></div>
+      </div>
+    </div>
+    <div>
+      <div class="fcolh">Women</div>
+      <ul class="flinks"><li><a href="#">Sarees</a></li><li><a href="#">Kurtis & Tops</a></li><li><a href="#">Lehengas</a></li><li><a href="#">Western Wear</a></li><li><a href="#">Bridal</a></li></ul>
+    </div>
+    <div>
+      <div class="fcolh">Men</div>
+      <ul class="flinks"><li><a href="#">Shirts</a></li><li><a href="#">Kurtas</a></li><li><a href="#">Sherwanis</a></li><li><a href="#">Trousers</a></li><li><a href="#">Ethnic Wear</a></li></ul>
+    </div>
+    <div>
+      <div class="fcolh">Accessories</div>
+      <ul class="flinks"><li><a href="#">Watches</a></li><li><a href="#">Footwear</a></li><li><a href="#">Handbags</a></li><li><a href="#">Jewellery</a></li><li><a href="#">Sunglasses</a></li></ul>
+    </div>
+    <div>
+      <div class="fcolh">Company</div>
+      <ul class="flinks"><li><a href="#">About Us</a></li><li><a href="#">For Shop Owners</a></li><li><a href="#">Contact</a></li><li><a href="#">Privacy Policy</a></li><li><a href="#">Terms of Use</a></li></ul>
+    </div>
+  </div>
+  <div class="fbot">
+    <div class="fcopy">© 2026 Trendly. All rights reserved.</div>
+    <div class="faff">Trendly is a participant in the Amazon Associates Programme. Product links are affiliate links — we may earn a commission at no extra cost to you.</div>
+  </div>
+</footer>
+
+<!-- AUTH MODAL — shown only on buy click -->
+<div class="modal-ov" id="modalOv" onclick="handleOvClick(event)">
+  <div class="modal">
+    <div class="mhead">
+      <button class="mclose" onclick="closeModal()">✕</button>
+      <div class="mlogo">Trendly</div>
+      <div class="mtitle" id="mTitle">One step to buy</div>
+      <div class="msub" id="mSub">Sign in to complete your purchase</div>
+      <div class="mprod-preview" id="mProdPreview" style="display:none">
+        <img class="mprod-img" id="mProdImg" src="" alt="" referrerpolicy="no-referrer"/>
+        <div><div class="mprod-name" id="mProdName"></div><div class="mprod-price" id="mProdPrice"></div></div>
+      </div>
+    </div>
+    <div class="mbody">
+      <div class="mtabs">
+        <button class="mtab on" id="tIn" onclick="swTab('in')">Sign In</button>
+        <button class="mtab" id="tUp" onclick="swTab('up')">Create Account</button>
+      </div>
+      <button class="soc-btn" onclick="doGoogle()">
+        <svg width="17" height="17" viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
+        Continue with Google
+      </button>
+      <button class="soc-btn" onclick="showPhone()">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+        Continue with Mobile OTP
+      </button>
+      <div class="mdiv"><span>or</span></div>
+      <div id="emailF">
+        <div class="mf" id="nameF" style="display:none"><label>Full Name</label><input type="text" id="mName" placeholder="Your full name"/></div>
+        <div class="mf"><label>Email Address</label><input type="email" id="mEmail" placeholder="you@email.com"/></div>
+        <div class="mf"><label>Password</label><input type="password" id="mPass" placeholder="••••••••"/></div>
+        <button class="msubmit" id="mSubmit" onclick="doEmail()">Sign In & Continue</button>
+      </div>
+      <div class="mphone" id="phoneF">
+        <div class="mf">
+          <label>Mobile Number</label>
+          <div class="otp-row">
+            <input type="tel" id="mPhone" placeholder="+91 98765 43210"/>
+            <button class="sotp" onclick="sendOTP()">Send OTP</button>
+          </div>
+        </div>
+        <div class="otp-boxes" id="otpB">
+          <input class="ob" maxlength="1" id="ob0" oninput="onext(0)"/>
+          <input class="ob" maxlength="1" id="ob1" oninput="onext(1)"/>
+          <input class="ob" maxlength="1" id="ob2" oninput="onext(2)"/>
+          <input class="ob" maxlength="1" id="ob3" oninput="onext(3)"/>
+          <input class="ob" maxlength="1" id="ob4" oninput="onext(4)"/>
+          <input class="ob" maxlength="1" id="ob5" oninput="onext(5)"/>
+        </div>
+        <button class="msubmit" onclick="verOTP()" style="margin-top:12px">Verify & Continue</button>
+        <p style="text-align:center;font-size:11.5px;color:var(--stone2);margin-top:9px;cursor:pointer" onclick="showEmail()">Use email instead</p>
+      </div>
+      <div class="mfoot" id="mFoot">No account? <a href="#" onclick="event.preventDefault();swTab('up')">Join free</a></div>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toastEl"></div>
+
+<script>
+/* ── YOUR AMAZON AFFILIATE TAG ──
+   Replace 'trendlystore-21' with your actual Amazon Associates tag
+   Get it at: affiliate-program.amazon.in
+─────────────────────────────── */
+const TAG = 'pricetag03-21';
+const aff = asin => `https://www.amazon.in/dp/${asin}?tag=${TAG}`;
+
+/* ── ALL PRODUCTS — Real Amazon India listings sorted by price asc ── */
+const ALL_PRODUCTS = [
+  {id:1,  name:'YouBella Fashion Jewellery Combo Set',brand:'YouBella',price:249,mrp:699,  rating:3.9,reviews:23400,cat:'jewellery',badge:'sale',asin:'B07L5JDMWT',
+   img:'https://ws-in.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=B07L5JDMWT&Format=SL300&ID=AsinImage&MarketPlace=IN&ServiceVersion=20070822&WS=1',
+   imgFb:'https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=400&q=80'},
+  {id:2,  name:'Jewels Galaxy AD Stone Necklace Set',brand:'Jewels Galaxy',price:299,mrp:999, rating:4.1,reviews:11200,cat:'jewellery',badge:'new',asin:'B081GHMS1N',
+   img:'https://ws-in.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=B081GHMS1N&Format=SL300&ID=AsinImage&MarketPlace=IN&ServiceVersion=20070822&WS=1',
+   imgFb:'https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=400&q=80'},
+  {id:3,  name:'VAST UV-Protected Wayfarer Sunglasses',brand:'VAST',price:299,mrp:699,  rating:4.0,reviews:14300,cat:'sunglasses',badge:'sale',asin:'B07P6X1PQD',
+   img:'https://ws-in.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=B07P6X1PQD&Format=SL300&ID=AsinImage&MarketPlace=IN&ServiceVersion=20070822&WS=1',
+   imgFb:'https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=400&q=80'},
+  {id:4,  name:'Janasya Women Printed Cotton Kurti',brand:'Janasya',price:299,mrp:799,  rating:4.1,reviews:6800, cat:'women',badge:'sale',asin:'B08LQJR4TV',
+   img:'https://ws-in.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=B08LQJR4TV&Format=SL300&ID=AsinImage&MarketPlace=IN&ServiceVersion=20070822&WS=1',
+   imgFb:'https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?w=400&q=80'},
+  {id:5,  name:'Hopscotch Girls Ethnic Kurti Set',brand:'Hopscotch',price:349,mrp:999,  rating:4.3,reviews:3200, cat:'kids',badge:'new',asin:'B09K7DXVPF',
+   img:'https://ws-in.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=B09K7DXVPF&Format=SL300&ID=AsinImage&MarketPlace=IN&ServiceVersion=20070822&WS=1',
+   imgFb:'https://images.unsplash.com/photo-1519278409-1f56ab241a93?w=400&q=80'},
+  {id:6,  name:'Jewels Galaxy Pearl Necklace Set',brand:'Jewels Galaxy',price:349,mrp:1099,rating:4.2,reviews:8700, cat:'jewellery',badge:'top',asin:'B07XCRM3HP',
+   img:'https://ws-in.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=B07XCRM3HP&Format=SL300&ID=AsinImage&MarketPlace=IN&ServiceVersion=20070822&WS=1',
+   imgFb:'https://images.unsplash.com/photo-1573408301185-9519f94f36e9?w=400&q=80'},
+  {id:7,  name:'Libas Women Straight Ethnic Kurta Set',brand:'Libas',price:349,mrp:999,  rating:4.2,reviews:8420, cat:'women',badge:'sale',asin:'B09VXY7B1K',
+   img:'https://ws-in.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=B09VXY7B1K&Format=SL300&ID=AsinImage&MarketPlace=IN&ServiceVersion=20070822&WS=1',
+   imgFb:'https://images.unsplash.com/photo-1594938298603-c8148c4b4ced?w=400&q=80'},
+  {id:8,  name:'Accessorize London Printed Scarf',brand:'Accessorize',price:349,mrp:799,  rating:4.1,reviews:4600, cat:'acc',badge:'new',asin:'B08K3MGLWH',
+   img:'https://ws-in.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=B08K3MGLWH&Format=SL300&ID=AsinImage&MarketPlace=IN&ServiceVersion=20070822&WS=1',
+   imgFb:'https://images.unsplash.com/photo-1601924994987-69e26d50dc26?w=400&q=80'},
+  {id:9,  name:'Carlton London Body Spray Gift Set',brand:'Carlton London',price:399,mrp:999,  rating:4.0,reviews:6800, cat:'acc',badge:'sale',asin:'B07XJCRVZP',
+   img:'https://ws-in.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=B07XJCRVZP&Format=SL300&ID=AsinImage&MarketPlace=IN&ServiceVersion=20070822&WS=1',
+   imgFb:'https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?w=400&q=80'},
+  {id:10, name:'Symbol Men Slim Fit Casual Shirt',brand:'Symbol (Amazon)',price:399,mrp:899,  rating:4.1,reviews:18600,cat:'men',badge:'sale',asin:'B07QGVJ5N9',
+   img:'https://ws-in.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=B07QGVJ5N9&Format=SL300&ID=AsinImage&MarketPlace=IN&ServiceVersion=20070822&WS=1',
+   imgFb:'https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?w=400&q=80'},
+  {id:11, name:'Kashvi Creation Printed Cotton Saree',brand:'Kashvi',price:399,mrp:999,  rating:4.0,reviews:2900, cat:'ethnic',badge:'new',asin:'B09DXRT6W4',
+   img:'https://ws-in.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=B09DXRT6W4&Format=SL300&ID=AsinImage&MarketPlace=IN&ServiceVersion=20070822&WS=1',
+   imgFb:'https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=400&q=80'},
+  {id:12, name:'Gini & Jony Boys Kurta Pyjama Set',brand:'Gini & Jony',price:449,mrp:1299, rating:4.2,reviews:2400, cat:'kids',badge:'top',asin:'B08LXFB9T5',
+   img:'https://ws-in.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=B08LXFB9T5&Format=SL300&ID=AsinImage&MarketPlace=IN&ServiceVersion=20070822&WS=1',
+   imgFb:'https://images.unsplash.com/photo-1519278409-1f56ab241a93?w=400&q=80'},
+  {id:13, name:'Fastrack UV400 Aviator Sunglasses',brand:'Fastrack',price:449,mrp:1295, rating:4.2,reviews:8900, cat:'sunglasses',badge:'top',asin:'B00B1OKQHM',
+   img:'https://ws-in.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=B00B1OKQHM&Format=SL300&ID=AsinImage&MarketPlace=IN&ServiceVersion=20070822&WS=1',
+   imgFb:'https://images.unsplash.com/photo-1511499767150-a48a237f0083?w=400&q=80'},
+  {id:14, name:'BIBA Women Embroidered Straight Kurta',brand:'BIBA',price:449,mrp:1199, rating:4.3,reviews:12300,cat:'women',badge:'sale',asin:'B08N5L9KWD',
+   img:'https://ws-in.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=B08N5L9KWD&Format=SL300&ID=AsinImage&MarketPlace=IN&ServiceVersion=20070822&WS=1',
+   imgFb:'https://images.unsplash.com/photo-1585487000160-6ebcfceb0d03?w=400&q=80'},
+  {id:15, name:'Bata Women Casual Ballet Flat',brand:'Bata',price:499,mrp:999,  rating:4.1,reviews:14200,cat:'footwear',badge:'sale',asin:'B00KSXF8RQ',
+   img:'https://ws-in.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=B00KSXF8RQ&Format=SL300&ID=AsinImage&MarketPlace=IN&ServiceVersion=20070822&WS=1',
+   imgFb:'https://images.unsplash.com/photo-1543163521-1bf539c55dd2?w=400&q=80'},
+  {id:16, name:'W for Woman Ethnic Straight Kurta',brand:'W',price:499,mrp:1299, rating:4.4,reviews:9200, cat:'women',badge:'top',asin:'B09CK7LWMQ',
+   img:'https://ws-in.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=B09CK7LWMQ&Format=SL300&ID=AsinImage&MarketPlace=IN&ServiceVersion=20070822&WS=1',
+   imgFb:'https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?w=400&q=80'},
+  {id:17, name:'Saree Mall Cotton Silk Printed Saree',brand:'Saree Mall',price:549,mrp:1499, rating:4.2,reviews:4100, cat:'ethnic',badge:'sale',asin:'B08KJ9YB2Z',
+   img:'https://ws-in.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=B08KJ9YB2Z&Format=SL300&ID=AsinImage&MarketPlace=IN&ServiceVersion=20070822&WS=1',
+   imgFb:'https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=400&q=80'},
+  {id:18, name:'Catwalk Women Block Heel Sandals',brand:'Catwalk',price:599,mrp:1499, rating:4.0,reviews:5600, cat:'footwear',badge:'new',asin:'B09CZXL5MQ',
+   img:'https://ws-in.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=B09CZXL5MQ&Format=SL300&ID=AsinImage&MarketPlace=IN&ServiceVersion=20070822&WS=1',
+   imgFb:'https://images.unsplash.com/photo-1515347619252-60a4bf4fff4f?w=400&q=80'},
+  {id:19, name:'Lavie Women Satchel Handbag',brand:'Lavie',price:699,mrp:1799, rating:4.0,reviews:7200, cat:'bags',badge:'sale',asin:'B08KFZQXHB',
+   img:'https://ws-in.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=B08KFZQXHB&Format=SL300&ID=AsinImage&MarketPlace=IN&ServiceVersion=20070822&WS=1',
+   imgFb:'https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=400&q=80'},
+  {id:20, name:"Fastrack Analog Women's Watch",brand:'Fastrack',price:749,mrp:1795, rating:4.2,reviews:31200,cat:'watches',badge:'sale',asin:'B00PWKDFX8',
+   img:'https://ws-in.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=B00PWKDFX8&Format=SL300&ID=AsinImage&MarketPlace=IN&ServiceVersion=20070822&WS=1',
+   imgFb:'https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=400&q=80'},
+  {id:21, name:'Timex Analog Unisex Wrist Watch',brand:'Timex',price:849,mrp:2095, rating:4.3,reviews:9400, cat:'watches',badge:'top',asin:'B00ISMD1LO',
+   img:'https://ws-in.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=B00ISMD1LO&Format=SL300&ID=AsinImage&MarketPlace=IN&ServiceVersion=20070822&WS=1',
+   imgFb:'https://images.unsplash.com/photo-1548171915-d896c2a4bc96?w=400&q=80'},
+  {id:22, name:'Caprese Women Tote Shoulder Bag',brand:'Caprese',price:999,mrp:2499, rating:4.3,reviews:4100, cat:'bags',badge:'top',asin:'B08N5DWRXT',
+   img:'https://ws-in.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=B08N5DWRXT&Format=SL300&ID=AsinImage&MarketPlace=IN&ServiceVersion=20070822&WS=1',
+   imgFb:'https://images.unsplash.com/photo-1566150905458-1bf1fc113f0d?w=400&q=80'},
+  {id:23, name:'Manyavar Men Kurta Churidar Set',brand:'Manyavar',price:999,mrp:2499, rating:4.5,reviews:3200, cat:'men',badge:'top',asin:'B08F2WXPL1',
+   img:'https://ws-in.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=B08F2WXPL1&Format=SL300&ID=AsinImage&MarketPlace=IN&ServiceVersion=20070822&WS=1',
+   imgFb:'https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=400&q=80'},
+  {id:24, name:'Puma Men Softride Running Shoes',brand:'Puma',price:1299,mrp:2999, rating:4.3,reviews:22000,cat:'footwear',badge:'top',asin:'B07WDMQ4KP',
+   img:'https://ws-in.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=B07WDMQ4KP&Format=SL300&ID=AsinImage&MarketPlace=IN&ServiceVersion=20070822&WS=1',
+   imgFb:'https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=400&q=80'},
+  {id:25, name:"Titan Analog Men's Watch",brand:'Titan',price:1295,mrp:2795, rating:4.4,reviews:18900,cat:'watches',badge:'top',asin:'B07BJMHB9G',
+   img:'https://ws-in.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=B07BJMHB9G&Format=SL300&ID=AsinImage&MarketPlace=IN&ServiceVersion=20070822&WS=1',
+   imgFb:'https://images.unsplash.com/photo-1524592094714-0f0654e20314?w=400&q=80'},
+  {id:26, name:'Saree Mall Kanjivaram Silk Saree',brand:'Saree Mall',price:1499,mrp:3999, rating:4.4,reviews:2100, cat:'ethnic',badge:'top',asin:'B09ML7VX3K',
+   img:'https://ws-in.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=B09ML7VX3K&Format=SL300&ID=AsinImage&MarketPlace=IN&ServiceVersion=20070822&WS=1',
+   imgFb:'https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=400&q=80'},
+  {id:27, name:'Adidas Men Running Sport Shoes',brand:'Adidas',price:1699,mrp:3499, rating:4.4,reviews:34500,cat:'footwear',badge:'top',asin:'B09DYRX1WB',
+   img:'https://ws-in.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=B09DYRX1WB&Format=SL300&ID=AsinImage&MarketPlace=IN&ServiceVersion=20070822&WS=1',
+   imgFb:'https://images.unsplash.com/photo-1556906781-9a412961a28c?w=400&q=80'},
+  {id:28, name:'Titan Raga Women Analog Watch',brand:'Titan Raga',price:1895,mrp:4095, rating:4.5,reviews:12400,cat:'watches',badge:'top',asin:'B00CXSLBCC',
+   img:'https://ws-in.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=B00CXSLBCC&Format=SL300&ID=AsinImage&MarketPlace=IN&ServiceVersion=20070822&WS=1',
+   imgFb:'https://images.unsplash.com/photo-1612817288484-6f916006741a?w=400&q=80'},
+  {id:29, name:'Hidesign Women Leather Handbag',brand:'Hidesign',price:1999,mrp:3995, rating:4.4,reviews:3800, cat:'bags',badge:'top',asin:'B07CR9HNDG',
+   img:'https://ws-in.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=B07CR9HNDG&Format=SL300&ID=AsinImage&MarketPlace=IN&ServiceVersion=20070822&WS=1',
+   imgFb:'https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=400&q=80'},
+  {id:30, name:'Kalini Women Designer Lehenga Choli',brand:'Kalini',price:1999,mrp:5499, rating:4.2,reviews:1900, cat:'women',badge:'sale',asin:'B09KXJDYQB',
+   img:'https://ws-in.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=B09KXJDYQB&Format=SL300&ID=AsinImage&MarketPlace=IN&ServiceVersion=20070822&WS=1',
+   imgFb:'https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=400&q=80'},
+
+const CATS_DATA = [
+  {name:'Women',cnt:'18,400+',cat:'women',
+   img:'https://ws-in.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=B09VXY7B1K&Format=SL100&ID=AsinImage&MarketPlace=IN&ServiceVersion=20070822&WS=1',
+   imgFb:'https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?w=100&q=80'},
+  {name:'Men',cnt:'6,800+',cat:'men',
+   img:'https://ws-in.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=B07QGVJ5N9&Format=SL100&ID=AsinImage&MarketPlace=IN&ServiceVersion=20070822&WS=1',
+   imgFb:'https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?w=100&q=80'},
+  {name:'Ethnic',cnt:'14,200+',cat:'ethnic',
+   img:'https://ws-in.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=B09ML7VX3K&Format=SL100&ID=AsinImage&MarketPlace=IN&ServiceVersion=20070822&WS=1',
+   imgFb:'https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=100&q=80'},
+  {name:'Footwear',cnt:'8,900+',cat:'footwear',
+   img:'https://ws-in.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=B00KSXF8RQ&Format=SL100&ID=AsinImage&MarketPlace=IN&ServiceVersion=20070822&WS=1',
+   imgFb:'https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=100&q=80'},
+  {name:'Watches',cnt:'3,400+',cat:'watches',
+   img:'https://ws-in.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=B00PWKDFX8&Format=SL100&ID=AsinImage&MarketPlace=IN&ServiceVersion=20070822&WS=1',
+   imgFb:'https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=100&q=80'},
+  {name:'Bags',cnt:'5,600+',cat:'bags',
+   img:'https://ws-in.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=B08KFZQXHB&Format=SL100&ID=AsinImage&MarketPlace=IN&ServiceVersion=20070822&WS=1',
+   imgFb:'https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=100&q=80'},
+  {name:'Jewellery',cnt:'11,200+',cat:'jewellery',
+   img:'https://ws-in.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=B07L5JDMWT&Format=SL100&ID=AsinImage&MarketPlace=IN&ServiceVersion=20070822&WS=1',
+   imgFb:'https://images.unsplash.com/photo-1573408301185-9519f94f36e9?w=100&q=80'},
+  {name:'Sunglasses',cnt:'2,100+',cat:'sunglasses',
+   img:'https://ws-in.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=B07P6X1PQD&Format=SL100&ID=AsinImage&MarketPlace=IN&ServiceVersion=20070822&WS=1',
+   imgFb:'https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=100&q=80'},
+];
+const DEAL_DATA = [
+  {name:'Saree Mall Kanjivaram Silk Saree — Heritage Collection',brand:'Saree Mall',price:1499,mrp:3999,
+   img:'https://ws-in.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=B09ML7VX3K&Format=SL300&ID=AsinImage&MarketPlace=IN&ServiceVersion=20070822&WS=1',
+   imgFb:'https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=600&q=80',asin:'B09ML7VX3K'},
+  {name:"Fastrack Analog Women's Watch",brand:'Fastrack',price:749,mrp:1795,
+   img:'https://ws-in.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=B00PWKDFX8&Format=SL300&ID=AsinImage&MarketPlace=IN&ServiceVersion=20070822&WS=1',
+   imgFb:'https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=400&q=80',asin:'B00PWKDFX8'},
+  {name:'Lavie Women Satchel Handbag',brand:'Lavie',price:699,mrp:1799,
+   img:'https://ws-in.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=B08KFZQXHB&Format=SL300&ID=AsinImage&MarketPlace=IN&ServiceVersion=20070822&WS=1',
+   imgFb:'https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=400&q=80',asin:'B08KFZQXHB'},
+];
+
+let activeCat='all', wishSet=new Set(), visibleCount=15, searchQ='', pendingAsin='', pendingTab='in';
+
+/* ── STARS ── */
+function stars(r){
+  return `<svg viewBox="0 0 100 20" width="60" height="12" style="flex-shrink:0">${[1,2,3,4,5].map(i=>{
+    const pct = Math.min(100,Math.max(0,(r-(i-1))*100));
+    const id='g'+Math.random().toString(36).slice(2);
+    return `<defs><linearGradient id="${id}"><stop offset="${pct}%" stop-color="#C4881A"/><stop offset="${pct}%" stop-color="#E0D4BE"/></linearGradient></defs><path d="M${(i-1)*20+10} 2l2.4 5h5.1l-4.1 3 1.5 5-4.9-3-4.9 3 1.5-5-4.1-3h5.1z" fill="url(#${id})"/>`;
+  }).join('')}</svg>`;
+}
+
+/* ── BADGE ── */
+function bClass(b){return{sale:'pb-sale',new:'pb-new',top:'pb-top'}[b]||'pb-new'}
+function bLabel(b){return{sale:'Sale',new:'New',top:'Top Rated'}[b]||b}
+
+/* ── BUILD CATEGORIES ── */
+function buildCats(){
+  document.getElementById('catGrid').innerHTML = CATS_DATA.map(c=>`
+    <div class="ccard" onclick="setCatScroll('${c.cat}')">
+      <img src="${c.img}" alt="${c.name}" loading="lazy" onerror="this.style.display='none'"/>
+      <div class="ccard-name">${c.name}</div>
+      <div class="ccard-cnt">${c.cnt}</div>
+    </div>`).join('');
+}
+
+/* ── BUILD DEALS ── */
+function buildDeals(){
+  const [m,...rest] = DEAL_DATA;
+  const off = d => Math.round((1-d.price/d.mrp)*100);
+  document.getElementById('dealGrid').innerHTML = `
+    <div class="deal-main" onclick="handleBuy('${m.asin}','${m.name}','${m.img}',${m.price})">
+      <div class="deal-main-img"><img src="${m.img}" alt="${m.name}" loading="lazy"/></div>
+      <div class="deal-main-body">
+        <div class="dtag">${off(m)}% off today</div>
+        <div class="deal-main-name">${m.name}</div>
+        <div class="deal-main-brand">${m.brand}</div>
+        <div class="deal-main-price">₹${m.price.toLocaleString()}</div>
+        <div class="deal-main-mrp">MRP ₹${m.mrp.toLocaleString()}</div>
+        <button class="deal-main-btn">Buy on Amazon</button>
+      </div>
+    </div>
+    ${rest.map(d=>`
+    <div class="deal-sm" onclick="handleBuy('${d.asin}','${d.name}','${d.img}',${d.price})">
+      <div class="deal-sm-img"><img src="${d.img}" alt="${d.name}" loading="lazy"/></div>
+      <div class="deal-sm-body">
+        <div class="deal-sm-name">${d.name}</div>
+        <div class="deal-sm-price">₹${d.price.toLocaleString()}</div>
+        <div class="deal-sm-off">${off(d)}% off · MRP ₹${d.mrp.toLocaleString()}</div>
+      </div>
+    </div>`).join('')}`;
+}
+
+/* ── FILTER & SORT ── */
+function getList(){
+  let list = activeCat==='all' ? [...ALL_PRODUCTS] : ALL_PRODUCTS.filter(p=>p.cat===activeCat);
+  if(searchQ) list = list.filter(p=>
+    p.name.toLowerCase().includes(searchQ)||
+    p.brand.toLowerCase().includes(searchQ)||
+    p.cat.includes(searchQ)
+  );
+  const s = document.getElementById('sortSel').value;
+  if(s==='price-asc') list.sort((a,b)=>a.price-b.price);
+  else if(s==='price-desc') list.sort((a,b)=>b.price-a.price);
+  else if(s==='discount') list.sort((a,b)=>(b.mrp-b.price)/b.mrp-(a.mrp-a.price)/a.mrp);
+  else if(s==='rating') list.sort((a,b)=>b.rating-a.rating);
+  return list;
+}
+
+/* ── RENDER PRODUCTS ── */
+function render(){
+  const list = getList();
+  const show = list.slice(0, visibleCount);
+  document.getElementById('prodCount').textContent = list.length;
+  document.getElementById('loadMoreBtn').style.display = list.length > visibleCount ? 'inline-block' : 'none';
+  if(list.length===0){
+    document.getElementById('prodGrid').innerHTML = `<div class="no-results"><h3>No products found</h3><p>Try a different search or category</p></div>`;
+    return;
+  }
+  const off = p => Math.round((1-p.price/p.mrp)*100);
+  document.getElementById('prodGrid').innerHTML = show.map(p=>`
+    <div class="pcard">
+      <div class="pcard-img">
+        <img src="${p.img}" data-fb="${p.imgFb}" alt="${p.name}" loading="lazy" onerror="this.onerror=null;this.src=this.dataset.fb"/>
+        <div class="pbadges"><span class="pbadge ${bClass(p.badge)}">${bLabel(p.badge)}</span></div>
+        <button class="pwish${wishSet.has(p.id)?' on':''}" onclick="event.stopPropagation();toggleWish(${p.id},this)" title="Wishlist">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="${wishSet.has(p.id)?'var(--burg)':'none'}" stroke="${wishSet.has(p.id)?'var(--burg)':'var(--stone)'}" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+        </button>
+      </div>
+      <div class="pbody">
+        <div class="pbrand">${p.brand}</div>
+        <div class="pname">${p.name}</div>
+        <div class="prating">
+          ${stars(p.rating)}
+          <span class="prating-n">${p.rating} (${p.reviews.toLocaleString()})</span>
+        </div>
+        <div class="ppricing">
+          <span class="pprice">₹${p.price.toLocaleString()}</span>
+          <span class="pmrp">₹${p.mrp.toLocaleString()}</span>
+          ${off(p)>0?`<span class="poff">${off(p)}% off</span>`:''}
+        </div>
+        <div class="psource">Available on <strong>Amazon India</strong></div>
+        <div class="pactions">
+          <button class="btn-buy" onclick="handleBuy('${p.asin}','${p.name}','${p.img}',${p.price})">Buy on Amazon</button>
+          <button class="btn-view" onclick="window.open('${aff(p.asin)}','_blank')">View</button>
+        </div>
+      </div>
+      <div class="paff">
+        <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+        Affiliate link · Price on Amazon
+      </div>
+    </div>`).join('');
+}
+
+function loadMore(){
+  visibleCount += 10;
+  render();
+}
+
+/* ── HANDLE BUY — shows modal, then redirects to Amazon ── */
+function handleBuy(asin, name, img, price){
+  pendingAsin = asin;
+  // Show product preview in modal
+  document.getElementById('mProdImg').src = img;
+  document.getElementById('mProdName').textContent = name;
+  document.getElementById('mProdPrice').textContent = '₹' + price.toLocaleString();
+  document.getElementById('mProdPreview').style.display = 'flex';
+  openModal(asin, 'in');
+}
+
+/* ── FILTER FUNCTIONS ── */
+function setFilter(cat, el){
+  activeCat = cat; visibleCount = 15;
+  document.querySelectorAll('.fp').forEach(f=>f.classList.remove('on'));
+  if(el) el.classList.add('on');
+  render();
+}
+function setCat(cat, el){
+  activeCat = cat; visibleCount = 15;
+  document.querySelectorAll('.cna').forEach(a=>a.classList.remove('on'));
+  if(el) el.classList.add('on');
+  // sync filter pills
+  document.querySelectorAll('.fp').forEach(f=>{
+    f.classList.toggle('on', (cat==='all'&&f.textContent==='All')||(f.textContent.toLowerCase()===cat));
+  });
+  render();
+  document.getElementById('products').scrollIntoView({behavior:'smooth'});
+}
+function setCatScroll(cat){
+  setCat(cat, document.querySelector(`.cna[onclick*="${cat}"]`));
+}
+function setNavCat(cat, el){
+  document.querySelectorAll('.nl').forEach(n=>n.classList.remove('on'));
+  el.classList.add('on');
+  setCat(cat, document.querySelector(`.cna[onclick*="${cat}"]`));
+}
+function doSearch(v){
+  searchQ = v.toLowerCase().trim();
+  visibleCount = 15;
+  render();
+}
+function toggleWish(id, btn){
+  if(wishSet.has(id)){
+    wishSet.delete(id);
+    btn.classList.remove('on');
+    btn.innerHTML = `<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--stone)" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>`;
+    toast('Removed from wishlist');
+  } else {
+    wishSet.add(id);
+    btn.classList.add('on');
+    btn.innerHTML = `<svg width="13" height="13" viewBox="0 0 24 24" fill="var(--burg)" stroke="var(--burg)" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>`;
+    toast('Saved to wishlist');
+  }
+  document.getElementById('wishCount').textContent = wishSet.size;
+}
+
+/* ── NAV SCROLL ── */
+window.addEventListener('scroll',()=>document.getElementById('nav').classList.toggle('sh',scrollY>28));
+
+/* ── MODAL ── */
+let mTab = 'in';
+function openModal(asin, tab='in'){
+  if(asin) pendingAsin = asin;
+  mTab = tab;
+  document.getElementById('modalOv').classList.add('open');
+  document.body.style.overflow = 'hidden';
+  swTab(tab);
+}
+function closeModal(){
+  document.getElementById('modalOv').classList.remove('open');
+  document.body.style.overflow = '';
+}
+function handleOvClick(e){ if(e.target===document.getElementById('modalOv')) closeModal(); }
+function swTab(t){
+  mTab = t;
+  document.getElementById('tIn').classList.toggle('on', t==='in');
+  document.getElementById('tUp').classList.toggle('on', t==='up');
+  document.getElementById('mTitle').textContent = t==='in' ? 'One step to buy' : 'Create free account';
+  document.getElementById('mSub').textContent = t==='in' ? 'Sign in to complete your purchase on Amazon' : 'Join Trendly free, then buy on Amazon';
+  document.getElementById('nameF').style.display = t==='up' ? 'block' : 'none';
+  document.getElementById('mSubmit').textContent = t==='in' ? 'Sign In & Continue' : 'Create Account & Continue';
+  document.getElementById('mFoot').innerHTML = t==='in'
+    ? `No account? <a href="#" onclick="event.preventDefault();swTab('up')">Join free</a>`
+    : `Already registered? <a href="#" onclick="event.preventDefault();swTab('in')">Sign in</a>`;
+  showEmail();
+}
+function showPhone(){
+  document.getElementById('emailF').style.display='none';
+  document.getElementById('phoneF').style.display='block';
+  document.getElementById('mFoot').style.display='none';
+}
+function showEmail(){
+  document.getElementById('emailF').style.display='block';
+  document.getElementById('phoneF').style.display='none';
+  document.getElementById('mFoot').style.display='block';
+  document.getElementById('otpB').classList.remove('show');
+}
+function afterAuth(){
+  closeModal();
+  toast('Signed in! Redirecting to Amazon...');
+  setTimeout(()=>{ if(pendingAsin) window.open(aff(pendingAsin),'_blank'); }, 800);
+}
+function doGoogle(){ afterAuth(); }
+function doEmail(){
+  const e = document.getElementById('mEmail').value;
+  if(!e){ toast('Please enter your email'); return; }
+  afterAuth();
+}
+function sendOTP(){
+  const p = document.getElementById('mPhone').value;
+  if(!p){ toast('Please enter your mobile number'); return; }
+  document.getElementById('otpB').classList.add('show');
+  document.getElementById('ob0').focus();
+  toast('OTP sent to ' + p);
+}
+function onext(i){ if(document.getElementById('ob'+i).value && i<5) document.getElementById('ob'+(i+1)).focus(); }
+function verOTP(){
+  const code = [0,1,2,3,4,5].map(i=>document.getElementById('ob'+i).value).join('');
+  if(code.length<6){ toast('Enter all 6 OTP digits'); return; }
+  afterAuth();
+}
+
+/* ── TOAST ── */
+let tT;
+function toast(msg){
+  const el = document.getElementById('toastEl');
+  el.textContent = msg; el.classList.add('show');
+  clearTimeout(tT); tT = setTimeout(()=>el.classList.remove('show'), 3200);
+}
+
+document.addEventListener('keydown', e=>{ if(e.key==='Escape') closeModal(); });
+
+/* ── INIT ── */
+buildCats();
+buildDeals();
+render();
+</script>
+</body>
+</html>
